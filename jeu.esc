@@ -1,0 +1,5 @@
+:init
+show_menu main
+
+:new_game
+change_scene res://salles/hall/hall.tcsn

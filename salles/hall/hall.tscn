@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://salles/hall.jpeg" type="Texture" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=4]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=5]
+[ext_resource path="res://personnages/persona.scn" type="PackedScene" id=6]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 1286, 717, 0, 717, 10, 591, 502, 593, 838, 593, 1288, 595, 508, 495, 820, 493 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 0, 3 ), PoolIntArray( 3, 6, 7, 4 ), PoolIntArray( 3, 2, 2 ) ]
+outlines = [ PoolVector2Array( 10, 591, 10, 591, 502, 593, 508, 495, 820, 493, 838, 593, 1288, 595, 1286, 717, 0, 717 ) ]
+
+[node name="hall" type="Node2D"]
+script = ExtResource( 2 )
+global_id = "hall"
+esc_script = "res://salles/hall/scripts/hall.esc"
+player_scene = ExtResource( 6 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = 2.0
+margin_top = 7.0
+margin_right = 1287.0
+margin_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+script = ExtResource( 4 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+position = Vector2( 0, 64 )
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 39, 675 )
+script = ExtResource( 5 )
+global_id = "hall_start_pos"
+is_start_location = true
