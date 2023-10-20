@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://personnages/persona.scn" type="PackedScene" id=5]
+[ext_resource path="res://salles/vrai_hall.PNG" type="Texture" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" type="Script" id=7]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 1, 1026, 669, 839, 1245, 835, 1912, 1021, 1910, 1064, 5, 1066 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+outlines = [ PoolVector2Array( 1, 1026, 669, 839, 1245, 835, 1912, 1021, 1910, 1064, 5, 1066 ) ]
+
+[node name="vrai_hall" type="Node2D"]
+script = ExtResource( 3 )
+global_id = "vrai_hall"
+esc_script = "res://salles/vrai_hall/scripts/vrai_hall.esc"
+player_scene = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1072.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+stretch_mode = 7
+script = ExtResource( 2 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="to_art" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+esc_script = "res://salles/hall/to_art.esc"
+is_exit = true
+tooltip_name = "aile artisitique"
+target_scene = "res://salles/aile_art/aile_art.tscn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/to_art"]
+polygon = PoolVector2Array( 173, 430, 211, 432, 238, 417, 380, 443, 382, 873, 382, 890, 450, 886, 173, 966 )
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 954, 979 )
+script = ExtResource( 1 )
+global_id = "vrai_hall_start_pos"
+is_start_location = true

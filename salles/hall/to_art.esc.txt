@@ -1,0 +1,2 @@
+:exit_scene
+change_scene res://salles/aile_hist/aile_hist.tscn

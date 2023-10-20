@@ -8,9 +8,9 @@
 [ext_resource path="res://personnages/persona.scn" type="PackedScene" id=6]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 1098, 971, 1558, 992, 1570, 1103, 302, 1097, 726, 980, 290, 974, 720, 872, 1101, 872 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 4, 6, 7, 0 ) ]
-outlines = [ PoolVector2Array( 290, 974, 726, 980, 720, 872, 1101, 872, 1098, 971, 1558, 992, 1570, 1103, 302, 1097 ) ]
+vertices = PoolVector2Array( 1598, 753, 0, 756, 5, 626, 659, 629, 1598, 629, 1003, 623, 659, 513, 1002, 515 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ), PoolIntArray( 5, 3, 6, 7 ) ]
+outlines = [ PoolVector2Array( 5, 626, 659, 629, 659, 513, 1002, 515, 1003, 623, 1598, 629, 1598, 753, 0, 756 ) ]
 
 [node name="hall" type="Node2D"]
 script = ExtResource( 2 )
@@ -19,27 +19,20 @@ esc_script = "res://salles/hall/scripts/hall.esc"
 player_scene = ExtResource( 6 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_left = -4.0
-margin_top = 10.0
-margin_right = 1269.0
-margin_bottom = 714.0
 mouse_filter = 2
 texture = ExtResource( 1 )
-expand = true
-stretch_mode = 7
 script = ExtResource( 4 )
 
 [node name="WalkableArea" type="Navigation2D" parent="."]
 script = ExtResource( 3 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
-position = Vector2( -294, -390 )
 navpoly = SubResource( 1 )
 
 [node name="RoomObjects" type="Node2D" parent="."]
 
 [node name="StartPos" type="Position2D" parent="."]
-position = Vector2( 39, 675 )
+position = Vector2( 795, 696 )
 script = ExtResource( 5 )
 global_id = "hall_start_pos"
 is_start_location = true
