@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=1]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
@@ -9,9 +9,18 @@
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" type="Script" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 1, 1026, 669, 839, 1245, 835, 1912, 1021, 1910, 1064, 5, 1066 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
-outlines = [ PoolVector2Array( 1, 1026, 669, 839, 1245, 835, 1912, 1021, 1910, 1064, 5, 1066 ) ]
+vertices = PoolVector2Array( 1157, 788, 1156, 719, 1205, 722, 1175, 796, 1204, 820, 1177, 833, 1538, 890, 1536, 796, 1754, 801, 1757, 979, 950, 772, 1097, 766, 1097, 788, 1064, 799, 167, 798, 383, 796, 383, 889, 167, 963, 714, 719, 763, 719, 765, 796, 739, 800, 709, 827, 736, 829, 1912, 1021, 1910, 1064, 5, 1066, 1464, 886, 1245, 835, 1, 1026, 1070, 832, 844.132, 829.017, 822, 793, 829, 778, 837, 767, 439, 893, 675, 830 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5 ), PoolIntArray( 6, 7, 8, 9 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17 ), PoolIntArray( 18, 19, 20, 21 ), PoolIntArray( 22, 18, 21, 23 ), PoolIntArray( 24, 25, 26, 9 ), PoolIntArray( 6, 9, 26, 27 ), PoolIntArray( 5, 28, 27, 26, 29, 17, 30 ), PoolIntArray( 10, 13, 30, 31, 32, 33, 34 ), PoolIntArray( 5, 4, 28 ), PoolIntArray( 31, 30, 17, 23 ), PoolIntArray( 22, 23, 17, 35 ), PoolIntArray( 17, 16, 35 ), PoolIntArray( 22, 35, 36 ) ]
+outlines = [ PoolVector2Array( 1, 1026, 167, 963, 167, 798, 383, 796, 383, 889, 439, 893, 675, 830, 709, 827, 714, 719, 763, 719, 765, 796, 739, 800, 736, 829, 844.132, 829.017, 822, 793, 829, 778, 837, 767, 950, 772, 1097, 766, 1097, 788, 1064, 799, 1070, 832, 1177, 833, 1175, 796, 1157, 788, 1156, 719, 1205, 722, 1204, 820, 1245, 835, 1464, 886, 1538, 890, 1536, 796, 1754, 801, 1757, 979, 1912, 1021, 1910, 1064, 5, 1066 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 141.5, 95 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 122, 95.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 249.5, 60.5 )
 
 [node name="vrai_hall" type="Node2D"]
 script = ExtResource( 3 )
@@ -24,7 +33,6 @@ margin_right = 1920.0
 margin_bottom = 1072.0
 mouse_filter = 2
 texture = ExtResource( 6 )
-stretch_mode = 7
 script = ExtResource( 2 )
 
 [node name="WalkableArea" type="Navigation2D" parent="."]
@@ -37,13 +45,32 @@ navpoly = SubResource( 1 )
 
 [node name="to_art" type="Area2D" parent="RoomObjects"]
 script = ExtResource( 7 )
-esc_script = "res://salles/hall/to_art.esc"
-is_exit = true
+global_id = "vers_art"
 tooltip_name = "aile artisitique"
 target_scene = "res://salles/aile_art/aile_art.tscn"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/to_art"]
-polygon = PoolVector2Array( 173, 430, 211, 432, 238, 417, 380, 443, 382, 873, 382, 890, 450, 886, 173, 966 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/to_art"]
+position = Vector2( 311.5, 872 )
+shape = SubResource( 2 )
+
+[node name="to_hist" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+global_id = "vers_hist"
+tooltip_name = "aile historiqque"
+target_scene = "res://salles/aile_hist/aile_hist.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/to_hist"]
+position = Vector2( 1642, 883.5 )
+shape = SubResource( 3 )
+
+[node name="to_bio" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+global_id = "vers_bio"
+target_scene = "res://salles/aile_bio/aile_bio.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/to_bio"]
+position = Vector2( 960.5, 777.5 )
+shape = SubResource( 4 )
 
 [node name="StartPos" type="Position2D" parent="."]
 position = Vector2( 954, 979 )
