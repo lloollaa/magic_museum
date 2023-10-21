@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=1]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
@@ -6,11 +6,15 @@
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
 [ext_resource path="res://personnages/persona.scn" type="PackedScene" id=5]
 [ext_resource path="res://salles/biologique.PNG" type="Texture" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" type="Script" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 1102, 853, 1983, 853, 1919, 951, 1119, 958, 2, 857, 631, 857, 597, 954, 2, 1082, 2471, 947, 2437, 850, 3366, 850, 3332, 958, 3863, 964, 3830, 857, 4025, 857, 4028, 1069 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 12, 15, 7, 11 ), PoolIntArray( 2, 8, 11, 7, 3 ), PoolIntArray( 6, 3, 7 ) ]
 outlines = [ PoolVector2Array( 2, 857, 631, 857, 597, 954, 1119, 958, 1102, 853, 1983, 853, 1919, 951, 2471, 947, 2437, 850, 3366, 850, 3332, 958, 3863, 964, 3830, 857, 4025, 857, 4028, 1069, 2, 1082 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 277.125, 114.5 )
 
 [node name="aile_bio" type="Node2D"]
 script = ExtResource( 3 )
@@ -30,6 +34,16 @@ script = ExtResource( 4 )
 navpoly = SubResource( 1 )
 
 [node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="to_hallh" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+global_id = "vers_hallh"
+tooltip_name = "retourner dans le hall"
+target_scene = "res://salles/vrai_hall/vrai_hall.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/to_hallh"]
+position = Vector2( 289.875, 955.5 )
+shape = SubResource( 2 )
 
 [node name="StartPos" type="Position2D" parent="."]
 position = Vector2( 828, 1014 )
