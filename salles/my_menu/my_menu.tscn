@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=4]
+[ext_resource path="res://salles/fond_start_page.PNG" type="Texture" id=5]
+[ext_resource path="res://salles/texte_start_page.PNG" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 200.5, 41.5 )
+
+[node name="my_menu" type="Node2D"]
+script = ExtResource( 4 )
+global_id = "my_menu"
+esc_script = "res://salles/my_menu/scripts/my_menu.esc"
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 5 )
+script = ExtResource( 3 )
+
+[node name="bouton_start" type="Area2D" parent="Background"]
+pause_mode = 1
+position = Vector2( 959, 534 )
+script = ExtResource( 1 )
+global_id = "bouton_start"
+esc_script = "res://salles/my_menu/bouton_start.esc"
+tooltip_name = "bouton_start"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+inventory_texture = ExtResource( 6 )
+dialog_color = Color( 1, 1, 1, 1 )
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/bouton_start"]
+position = Vector2( 0.5, 304.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Background/bouton_start"]
+texture = ExtResource( 6 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
