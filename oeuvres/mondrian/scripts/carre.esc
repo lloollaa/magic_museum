@@ -1,0 +1,21 @@
+:use
+>[eq couleur 0]
+	set_state carre bleu
+	set_global c false
+	stop
+>[eq couleur 1]
+	set_state carre jaune
+	set_global c false
+	stop
+>[eq couleur 2]
+	set_state carre noir
+	set_global c true
+	stop
+>[eq couleur 3]
+	set_state carre rouge
+	set_global c false
+	stop
+
+> [gc, c, rjv, rjh, grj, bbd, nmb, rv]
+	wait 5
+	change_scene res://salles/aile_art/aile_art.tscn

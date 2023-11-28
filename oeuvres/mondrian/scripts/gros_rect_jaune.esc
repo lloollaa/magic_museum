@@ -1,0 +1,17 @@
+:use
+>[eq couleur 0]
+	set_state gros_rect_jaune bleu
+	set_global grj false
+>[eq couleur 1]
+	set_state gros_rect_jaune jaune
+	set_global grj true
+>[eq couleur 2]
+	set_state gros_rect_jaune noir
+	set_global grj false
+>[eq couleur 3]
+	set_state gros_rect_jaune rouge
+	set_global grj false
+
+> [gc, c, rjv, rjh, grj, bbd, nmb, rv]
+	wait 5
+	change_scene res://salles/aile_art/aile_art.tscn
