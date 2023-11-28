@@ -1,0 +1,4 @@
+:look
+say persona "Les fleurs sont fermées" avatar
+change_scene res://oeuvres/tableau_nymphea/tableau_nymphea.tscn
+

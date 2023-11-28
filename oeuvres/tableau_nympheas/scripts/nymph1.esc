@@ -1,0 +1,8 @@
+:use
+>[!nymph_1_ouvert]
+	set_state nymph_1 ouverture
+	set_global nymph_1_ouvert true
+
+>[nymph_1_ouvert,nymph_2_ouvert,nymph_3_ouvert,nymph_4_ouvert,nymph_5_ouvert,nymph_6_ouvert]
+	wait 2
+	set_state animation_fin gagne
