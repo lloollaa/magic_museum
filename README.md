@@ -1,2 +1,3 @@
 # magic_museum
 Ici il y a tous les fichiers utiles pour le jeu : les images, les .esc, .tscn, .gd etc...
+L'aile artistique marche mais pas les autres
