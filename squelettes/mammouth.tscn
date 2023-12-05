@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://squelettes/mammouth/droite_derr.tscn" type="PackedScene" id=1]
+[ext_resource path="res://squelettes/mammouth/cage_tho.tscn" type="PackedScene" id=2]
+[ext_resource path="res://squelettes/mammouth/fond_mammouth.PNG" type="Texture" id=3]
+[ext_resource path="res://squelettes/mammouth/tete.tscn" type="PackedScene" id=4]
+[ext_resource path="res://squelettes/mammouth/queue.tscn" type="PackedScene" id=5]
+[ext_resource path="res://squelettes/mammouth/gauche_dev.tscn" type="PackedScene" id=6]
+[ext_resource path="res://squelettes/mammouth/droite_dev.tscn" type="PackedScene" id=7]
+[ext_resource path="res://squelettes/mammouth/gauche_derr.tscn" type="PackedScene" id=8]
+[ext_resource path="res://squelettes/mammouth.gd" type="Script" id=9]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+
+[node name="cage_thora" parent="." instance=ExtResource( 2 )]
+position = Vector2( 949, 453 )
+
+[node name="derr_d" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1214, 690 )
+
+[node name="droite_dev" parent="." instance=ExtResource( 7 )]
+position = Vector2( 753, 711 )
+
+[node name="gauche_derr" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1116, 632 )
+
+[node name="gauche_dev" parent="." instance=ExtResource( 6 )]
+position = Vector2( 803, 604 )
+
+[node name="queue" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1193, 513 )
+
+[node name="tete" parent="." instance=ExtResource( 4 )]
+position = Vector2( 516, 434 )
+
+[node name="cage_deb" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1580, 166 )
+
+[node name="derr_d_deb" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1495, 834 )
+
+[node name="d_dev_deb" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1738, 834 )
+
+[node name="g_derr_deb" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1840, 773 )
+
+[node name="g_dev_deb" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1587, 802 )
+
+[node name="queue_deb" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1720, 568 )
+
+[node name="tete_deb" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1567, 340 )
+
+[node name="pos_cage" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 954, 449 )
+
+[node name="pos_derr_d" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1214, 689 )
+
+[node name="pos_dev_d" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 754, 709 )
+
+[node name="pos_derr_g" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1115, 635 )
+
+[node name="pos_dev_g" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 802, 604 )
+
+[node name="pos_queue" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 1194, 514 )
+
+[node name="pos_tete" type="Position2D" parent="." groups=["zone"]]
+position = Vector2( 513, 439 )
