@@ -1,8 +1,0 @@
-:look
->[!tableau_place]	
-	set_state tableau place
-	set_global tableau_place true
-
->[chaise_loin_placee,chaise_proche_placee,tableau_place]
-	wait 2
-	set_state animation_fin gagne
