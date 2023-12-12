@@ -794,7 +794,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="vrai test"
+config/name="le musee magique"
 run/main_scene="res://addons/escoria-core/game/main_scene.tscn"
 config/icon="res://icon.png"
 
@@ -819,7 +819,8 @@ enabled=PoolStringArray( "res://addons/escoria-core/plugin.cfg", "res://addons/e
 [escoria]
 
 main/game_version=""
-main/game_start_script="res://jeu.esc"
+main/game_start_script="jeu.esc"
+main/action_default_script=""
 main/force_quit=true
 main/command_directories=[ "res://addons/escoria-core/game/core-scripts/esc/commands" ]
 main/text_lang="fr_FR"
@@ -837,6 +838,7 @@ debug/crash_message="We're sorry, but the game crashed. Please send us the follo
 %s"
 debug/enable_room_selector=false
 debug/room_selector_room_dir=""
+debug/enable_hover_stack_viewer=false
 ui/default_dialog_type="floating"
 ui/game_scene="res://addons/escoria-ui-simplemouse/game.tscn"
 ui/inventory_items_path="res://game/items/inventory/"
@@ -860,7 +862,7 @@ dialog_simple/clear_text_by_click_only=false
 dialog_simple/reading_speed_in_wpm=200
 dialog_simple/left_click_action="Speed up"
 dialog_simple/stop_talking_animation_on="End of audio"
-wizard/path_to_rooms="res://oeuvres"
+wizard/path_to_rooms="res://pieces_du_musee/squelettes_aile_bio/baleine"
 
 [gui]
 
