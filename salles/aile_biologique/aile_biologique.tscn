@@ -1,0 +1,168 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://salles/biologique.PNG" type="Texture" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=4]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=5]
+[ext_resource path="res://personnnage/persona.scn" type="PackedScene" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" type="Script" id=7]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=8]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" type="Script" id=9]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 0, 854, 643, 855, 612, 915, 0, 1080, 2422, 854, 3383, 853, 3354, 911, 2450, 912, 3846, 912, 3817, 854, 4030, 854, 4030, 1080, 1079, 855, 1989, 855, 1956, 923, 1106, 912, 3845, 952, 3353, 951, 2451, 952, 613, 953, 1956, 950, 1104, 952 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 16, 8, 11 ), PoolIntArray( 17, 16, 11, 3, 18 ), PoolIntArray( 3, 2, 19 ), PoolIntArray( 7, 6, 17, 18 ), PoolIntArray( 20, 18, 3, 21 ), PoolIntArray( 15, 14, 20, 21 ), PoolIntArray( 3, 19, 21 ) ]
+outlines = [ PoolVector2Array( 0, 854, 643, 855, 612, 915, 613, 953, 1104, 952, 1106, 912, 1079, 855, 1989, 855, 1956, 923, 1956, 950, 2451, 952, 2450, 912, 2422, 854, 3383, 853, 3354, 911, 3353, 951, 3845, 952, 3846, 912, 3817, 854, 4030, 854, 4030, 1080, 0, 1080 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 592.75, 35.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26.5, 23 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 29.5, 23 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 27, 22.5 )
+
+[node name="aile_biologique" type="Node2D"]
+script = ExtResource( 3 )
+global_id = "aile_biologique"
+esc_script = "res://salles/aile_biologique/scripts/aile_biologique.esc"
+player_scene = ExtResource( 6 )
+camera_limits = [ Rect2( 0, 0, 4030, 0 ) ]
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="ESCExit" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+tooltip_name = "retourner dans le hall"
+default_action = "walk"
+target_scene = "res://salles/hall/hall.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/ESCExit"]
+position = Vector2( 859.75, 1053.5 )
+shape = SubResource( 2 )
+
+[node name="trex" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 8 )
+global_id = "trex"
+esc_script = "res://salles/aile_biologique/scripts/trex.esc"
+tooltip_name = "trex"
+default_action = "look"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/trex"]
+position = Vector2( 720, 966 )
+script = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/trex"]
+polygon = PoolVector2Array( 385, 215, 573, 153, 624, 232, 622, 310, 631, 354, 647, 371, 722, 359, 760, 359, 821, 359, 925, 399, 982, 431, 1029, 501, 1088, 545, 1139, 590, 1184, 615, 1226, 624, 1287, 628, 1321, 628, 1374, 611, 1391, 611, 1362, 660, 1315, 679, 1266, 706, 1215, 727, 1156, 706, 1090, 672, 1044, 643, 995, 604, 978, 594, 989, 624, 1039, 698, 1052, 751, 1059, 821, 1048, 863, 991, 910, 948, 916, 929, 867, 929, 861, 961, 816, 967, 795, 961, 721, 936, 668, 912, 636, 887, 651, 845, 664, 819, 664, 811, 698, 842, 789, 849, 848, 794, 886, 730, 903, 679, 908, 660, 876, 700, 833, 739, 799, 749, 738, 749, 679, 715, 609, 671, 621, 535, 628, 518, 581, 548, 522, 558, 465, 552, 410, 520, 397, 465, 401, 351, 399, 372, 342, 395, 323, 332, 268, 357, 251, 359, 227 )
+
+[node name="baleine" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 8 )
+esc_script = "res://salles/aile_biologique/scripts/baleine.esc"
+default_action = "look"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interract_pos" type="Position2D" parent="RoomObjects/baleine"]
+position = Vector2( 2188, 1023 )
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/baleine"]
+polygon = PoolVector2Array( 1592, 331, 1645, 307, 1701, 288, 1756, 274, 1793, 271, 1865, 271, 1964, 270, 1973, 277, 2027, 283, 2037, 299, 2036, 324, 2066, 286, 2115, 273, 2156, 256, 2235, 256, 2250, 264, 2319, 264, 2323, 273, 2397, 272, 2419, 280, 2445, 280, 2461, 288, 2598, 286, 2641, 274, 2658, 270, 2666, 273, 2685, 273, 2688, 263, 2726, 252, 2731, 260, 2776, 242, 2779, 247, 2809, 221, 2815, 226, 2816, 260, 2772, 302, 2729, 312, 2702, 332, 2659, 333, 2646, 342, 2608, 339, 2587, 354, 2559, 358, 2529, 350, 2472, 352, 2461, 357, 2374, 360, 2373, 439, 2404, 454, 2449, 467, 2482, 486, 2494, 489, 2496, 504, 2435, 503, 2363, 482, 2320, 465, 2317, 474, 2302, 501, 2283, 497, 2269, 528, 2174, 529, 2172, 513, 2157, 542, 2128, 545, 2122, 523, 2094, 529, 2053, 529, 2048, 514, 2017, 505, 2001, 471, 1963, 467, 1873, 464, 1754, 453, 1693, 448, 1589, 437, 1583, 420, 1587, 411, 1691, 405, 1755, 408, 1807, 381, 1900, 365, 1857, 348, 1718, 352, 1609, 368, 1589, 355, 1588, 339 )
+
+[node name="plaquette_trex" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1033, 945 )
+script = ExtResource( 8 )
+global_id = "plaquette_trex"
+esc_script = "res://plaquettes/plaquette_bio/trex/plaquette_trex.esc"
+tooltip_name = "plaquette_trex"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_trex"]
+position = Vector2( 22, 34 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_trex"]
+position = Vector2( 7.5, -14 )
+shape = SubResource( 3 )
+
+[node name="plaquette_baleine" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 2380, 907 )
+script = ExtResource( 8 )
+global_id = "plaquette_baleine"
+esc_script = "res://plaquettes/plaquette_bio/baleine/plaquette_baleine.esc"
+tooltip_name = "plaquette_baleine"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_baleine"]
+position = Vector2( 0, 128 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_baleine"]
+position = Vector2( -1.5, 24 )
+shape = SubResource( 4 )
+
+[node name="plaquette_mammouth" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 3768, 912 )
+script = ExtResource( 8 )
+global_id = "plaquette_mammouth"
+esc_script = "res://plaquettes/plaquette_bio/mammouth/plaquette_mammouth.esc"
+tooltip_name = "plaquette_mammouth"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_mammouth"]
+position = Vector2( 0, 128 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_mammouth"]
+position = Vector2( 4, 19.5 )
+shape = SubResource( 5 )
+
+[node name="sortie_trex" type="Position2D" parent="RoomObjects"]
+position = Vector2( 876, 993 )
+script = ExtResource( 4 )
+global_id = "sortie_trex"
+
+[node name="sortie_baleine" type="Position2D" parent="RoomObjects"]
+position = Vector2( 2206, 1023 )
+script = ExtResource( 4 )
+global_id = "sortie_baleine"
+
+[node name="sortie_mammouth" type="Position2D" parent="RoomObjects"]
+position = Vector2( 3612, 1008 )
+script = ExtResource( 4 )
+global_id = "sortie_mammouth"
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 875, 1031 )
+script = ExtResource( 4 )
+global_id = "aile_biologique_start_pos"
+is_start_location = true

@@ -1,0 +1,30 @@
+# Room script template
+
+# ":setup" is used to configure anything you want in place before the 
+# transition-in event runs (i.e. anything you need to set up before the player
+# sees the room). Reset movable objects to their start positions here.
+
+:setup
+
+> [eq ESC_LAST_SCENE puzzle_trex]
+	teleport persona sortie_trex
+	stop
+> [eq ESC_LAST_SCENE baleine]
+	teleport persona sortie_baleine
+	stop
+#> [eq ESC_LAST_SCENE tableau_nymphea]
+#	teleport persona sortie_nymphea
+#	stop
+
+
+# ":ready" runs after any events configured in setup complete. It is used to
+# configure everything that happens after the transition-in (if any) completes.
+# runs. Story telling events go here (e.g. if you want the character to walk to
+# a specific location in the room before giving control to the player.)
+
+:ready
+
+
+
+
+

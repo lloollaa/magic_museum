@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://personnnage/persona.scn" type="PackedScene" id=5]
+[ext_resource path="res://salles/hall.PNG" type="Texture" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" type="Script" id=7]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 820, 720, 864, 719, 838, 766, 819, 793, 850, 794, 1103, 767, 1102, 791, 1068, 793, 1187, 786, 1207, 785, 1207, 833, 1185, 833, 1067, 833, 851, 833, 1537, 889, 1537, 808, 1752, 809, 1752, 976, 1920, 1020, 1920, 1072, 0, 1072, 1464, 888, 1252, 832, 671, 832, 455, 891, 383, 887, 171, 974, 172, 802, 379, 803, 0, 1023 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11 ), PoolIntArray( 4, 7, 12, 13 ), PoolIntArray( 14, 15, 16, 17 ), PoolIntArray( 18, 19, 20, 17 ), PoolIntArray( 14, 17, 20, 21 ), PoolIntArray( 22, 21, 20, 10 ), PoolIntArray( 11, 10, 20 ), PoolIntArray( 12, 11, 20 ), PoolIntArray( 13, 12, 20 ), PoolIntArray( 23, 13, 20, 24 ), PoolIntArray( 25, 24, 20, 26 ), PoolIntArray( 26, 27, 28, 25 ), PoolIntArray( 20, 29, 26 ) ]
+outlines = [ PoolVector2Array( 0, 1023, 171, 974, 172, 802, 379, 803, 383, 887, 455, 891, 671, 832, 851, 833, 850, 794, 819, 793, 820, 720, 864, 719, 838, 766, 1103, 767, 1102, 791, 1068, 793, 1067, 833, 1185, 833, 1187, 786, 1207, 785, 1207, 833, 1252, 832, 1464, 888, 1537, 889, 1537, 808, 1752, 809, 1752, 976, 1920, 1020, 1920, 1072, 0, 1072 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 110.625, 94.875 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 110, 88 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 249.25, 60 )
+
+[node name="hall" type="Node2D"]
+script = ExtResource( 2 )
+global_id = "hall"
+esc_script = "res://salles/hall/scripts/hall.esc"
+player_scene = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 6 )
+script = ExtResource( 1 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="sortie_art" type="Position2D" parent="RoomObjects"]
+position = Vector2( 346, 950 )
+script = ExtResource( 3 )
+global_id = "sortie_art"
+
+[node name="sortie_bio" type="Position2D" parent="RoomObjects"]
+position = Vector2( 972, 824 )
+script = ExtResource( 3 )
+global_id = "sortie_bio"
+
+[node name="sortie_hist" type="Position2D" parent="RoomObjects"]
+position = Vector2( 1576, 956 )
+script = ExtResource( 3 )
+global_id = "sortie_hist"
+
+[node name="vers_art" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+tooltip_name = "aile artistique"
+default_action = "walk"
+target_scene = "res://salles/aile_artistique/aile_artistique.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/vers_art"]
+position = Vector2( 279, 888 )
+shape = SubResource( 2 )
+
+[node name="vers_hist" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+tooltip_name = "aile historique"
+default_action = "walk"
+target_scene = "res://salles/aile_historique/aile_historique.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/vers_hist"]
+position = Vector2( 1645, 878 )
+shape = SubResource( 3 )
+
+[node name="vers_bio" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+tooltip_name = "aile biologique"
+default_action = "walk"
+target_scene = "res://salles/aile_biologique/aile_biologique.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/vers_bio"]
+position = Vector2( 959.75, 772 )
+shape = SubResource( 4 )
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 970, 938 )
+script = ExtResource( 3 )
+global_id = "hall_start_pos"
+is_start_location = true

@@ -1,0 +1,199 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://salles/artistique.PNG" type="Texture" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=4]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=5]
+[ext_resource path="res://personnnage/persona.scn" type="PackedScene" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" type="Script" id=7]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=8]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -3, 844, 1917, 850, 1917, 1067, -3, 1068 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -3, 844, 1917, 850, 1917, 1067, -3, 1068 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 98.5, 110.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 232, 208 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 156, 128 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 136, 136 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 30, 34 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 30, 33.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 29.5, 34.5 )
+
+[node name="aile_artistique" type="Node2D"]
+script = ExtResource( 3 )
+global_id = "aile_artistique"
+esc_script = "res://salles/aile_artistique/scripts/aile_artistique.esc"
+player_scene = ExtResource( 6 )
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+position = Vector2( 3, 4 )
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="ESCExit" type="Area2D" parent="RoomObjects"]
+script = ExtResource( 7 )
+tooltip_name = "retourner dans le hall"
+default_action = "walk"
+target_scene = "res://salles/hall/hall.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/ESCExit"]
+position = Vector2( 1819.5, 961.5 )
+shape = SubResource( 2 )
+
+[node name="nympheas" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 998, 518 )
+script = ExtResource( 8 )
+global_id = "nympheas"
+esc_script = "res://salles/aile_artistique/scripts/tableau_nymphea.esc"
+tooltip_name = "nympheas"
+default_action = "look"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/nympheas"]
+position = Vector2( 468, 377 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/nympheas"]
+position = Vector2( 466, -118 )
+shape = SubResource( 3 )
+
+[node name="chambre" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 8 )
+global_id = "chambre"
+esc_script = "res://salles/aile_artistique/scripts/tableau_chambre.esc"
+tooltip_name = "chambre"
+default_action = "look"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/chambre"]
+position = Vector2( 355, 882 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/chambre"]
+position = Vector2( 380, 400 )
+shape = SubResource( 4 )
+
+[node name="mondrian" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 8 )
+global_id = "mondrian"
+esc_script = "res://salles/aile_artistique/scripts/tableau_mondrian.esc"
+tooltip_name = "mondrian"
+default_action = "look"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/mondrian"]
+position = Vector2( 902, 886 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/mondrian"]
+position = Vector2( 896, 400 )
+shape = SubResource( 5 )
+
+[node name="sortie_nympheas" type="Position2D" parent="RoomObjects"]
+position = Vector2( 1472, 913 )
+script = ExtResource( 4 )
+global_id = "sortie_nympheas"
+
+[node name="sortie_mondrian" type="Position2D" parent="RoomObjects"]
+position = Vector2( 906, 908 )
+script = ExtResource( 4 )
+global_id = "sortie_mondrian"
+
+[node name="sortie_chambre" type="Position2D" parent="RoomObjects"]
+position = Vector2( 359, 914 )
+script = ExtResource( 4 )
+global_id = "sortie_chambre"
+
+[node name="plaquette_mondrian" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1081, 504 )
+script = ExtResource( 8 )
+global_id = "plaquette_mondrian"
+esc_script = "res://plaquettes/plaquette_art/mondrian/plaquette_mondrian.esc"
+tooltip_name = "plaquette_mondrian"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_mondrian"]
+position = Vector2( -10, 400 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_mondrian"]
+position = Vector2( -5, -1 )
+shape = SubResource( 6 )
+
+[node name="plaquette_nymphea" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1746, 514 )
+script = ExtResource( 8 )
+global_id = "plaquette_nymphea"
+esc_script = "res://plaquettes/plaquette_art/nympheas/plaquette_nympheas.esc"
+tooltip_name = "plaquette_nymphea"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_nymphea"]
+position = Vector2( -54, 397 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_nymphea"]
+position = Vector2( -1, -8.5 )
+shape = SubResource( 7 )
+
+[node name="plaquette_van_gogh" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 580, 503 )
+script = ExtResource( 8 )
+global_id = "plaquette_van_gogh"
+esc_script = "res://plaquettes/plaquette_art/chambre/plaquette_chambre.esc"
+tooltip_name = "plaquette_van_gogh"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_van_gogh"]
+position = Vector2( 12, 413 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_van_gogh"]
+position = Vector2( 0.5, 1.5 )
+shape = SubResource( 8 )
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 1622, 938 )
+script = ExtResource( 4 )
+global_id = "aile_artistique_start_pos"
+is_start_location = true

@@ -1,0 +1,3 @@
+:look
+say persona "coucou"
+change_scene res://pieces_du_musee/tableaux_aile_art/mondrian/mondrian.tscn
