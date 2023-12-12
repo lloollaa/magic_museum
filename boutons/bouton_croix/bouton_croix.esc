@@ -1,0 +1,12 @@
+:use
+>[eq ESC_LAST_SCENE aile_artistique]
+	change_scene res://salles/aile_artistique/aile_artistique.tscn
+	stop
+
+>[eq ESC_LAST_SCENE aile_biologique]
+	change_scene res://salles/aile_biologique/aile_biologique.tscn
+	stop
+
+>[eq ESC_LAST_SCENE aile_historique]
+	change_scene res://salles/aile_historique/aile_historique.tscn
+	stop

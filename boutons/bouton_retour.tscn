@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://boutons/bouton_retour/bouton_retour.PNG" type="Texture" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 79.5, 74.5 )
+
+[node name="bouton_retour" type="Area2D"]
+pause_mode = 1
+position = Vector2( 961, 541 )
+script = ExtResource( 3 )
+global_id = "bouton_retour"
+esc_script = "res://boutons/bouton_retour/bouton_retour.esc"
+tooltip_name = "bouton_retour"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+inventory_texture = ExtResource( 1 )
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -827.5, -411.5 )
+shape = SubResource( 21 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

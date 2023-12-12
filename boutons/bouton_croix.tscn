@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=2]
+[ext_resource path="res://boutons/bouton_croix/bouton_croix.PNG" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 77.9375, 68.9375 )
+
+[node name="bouton_croix" type="Area2D"]
+pause_mode = 1
+position = Vector2( 962, 542 )
+script = ExtResource( 2 )
+global_id = "bouton_croix"
+esc_script = "res://boutons/bouton_croix/bouton_croix.esc"
+tooltip_name = "bouton_croix"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+inventory_texture = ExtResource( 3 )
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 805, -379.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
