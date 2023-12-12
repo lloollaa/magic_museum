@@ -1,0 +1,17 @@
+:use
+>[eq couleur 0]
+	set_state bleu_bas_droite bleu
+	set_global bbd true
+>[eq couleur 1]
+	set_state bleu_bas_droite jaune
+	set_global bbd false
+>[eq couleur 2]
+	set_state bleu_bas_droite noir
+	set_global bbd false
+>[eq couleur 3]
+	set_state bleu_bas_droite rouge
+	set_global bbd false
+
+> [gc, c, rjv, rjh, grj, bbd, nmb, rv]
+	wait 5
+	change_scene res://salles/aile_artistique/aile_artistique.tscn

@@ -1,0 +1,17 @@
+:use
+>[eq couleur 0]
+	set_state rouge_v bleu
+	set_global rv false
+>[eq couleur 1]
+	set_state rouge_v jaune
+	set_global rv false
+>[eq couleur 2]
+	set_state rouge_v noir
+	set_global rv false
+>[eq couleur 3]
+	set_state rouge_v rouge
+	set_global rv true
+
+>[gc, c, rjv, rjh, grj, bbd, nmb, rv]
+	wait 5
+	change_scene res://salles/aile_artistique/aile_artistique.tscn
