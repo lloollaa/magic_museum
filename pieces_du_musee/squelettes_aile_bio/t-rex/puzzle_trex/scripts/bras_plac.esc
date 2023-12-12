@@ -1,0 +1,48 @@
+:use
+>[eq piece 0]
+	set_global piece 1
+	stop
+
+>[eq piece 1]
+	set_state bras bras
+	set_global bras false
+	set_global piece 0
+
+>[eq piece 2]
+	set_state bras dos
+	set_global bras false
+	set_global piece 0
+
+>[eq piece 3]
+	set_state bras gagne
+	set_global bras true
+	set_global piece 0
+	set_state bras_deb vide
+
+>[eq piece 4]
+	set_state bras cage_thora
+	set_global bras false
+	set_global piece 0
+
+>[eq piece 5]
+	set_state bras bassin
+	set_global bras false
+	set_global piece 0
+
+>[eq piece 6]
+	set_state bras gauche
+	set_global bras false
+	set_global piece 0
+
+>[eq piece 7]
+	set_state bras droite
+	set_global bras false
+	set_global piece 0
+
+>[eq piece 8]
+	set_state bras queue
+	set_global bras false
+	set_global piece 0
+>[bassin, thora, bras, dos, droite, gauche, tete, queue]
+wait 2
+change_scene res://salles/aile_biologique/aile_biologique.tscn

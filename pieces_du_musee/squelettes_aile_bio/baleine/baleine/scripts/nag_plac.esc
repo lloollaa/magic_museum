@@ -1,0 +1,39 @@
+:use
+>[eq piece 0]
+	set_global piece 1
+	stop
+
+>[eq piece 1]
+	set_state nag bras
+	set_global nag false
+	set_global piece 0
+
+>[eq piece 2]
+	set_state nag dos
+	set_global nag false
+	set_global piece 0
+
+>[eq piece 3]
+	set_state nag gagne
+	set_global nag true
+	set_global piece 0
+	set_state nag_deb vide
+
+>[eq piece 4]
+	set_state nag thora
+	set_global nag false
+	set_global piece 0
+
+>[eq piece 5]
+	set_state nag machoire
+	set_global nag false
+	set_global piece 0
+
+>[eq piece 6]
+	set_state nag queue
+	set_global nag false
+	set_global piece 0
+
+>[nag, thora, dos, tete, queue, machoire]
+	wait 2
+	change_scene res://salles/aile_biologique/aile_biologique.tscn

@@ -1,0 +1,703 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/t-rex.PNG" type="Texture" id=1]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/petites_images/bassin.PNG" type="Texture" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=3]
+[ext_resource path="res://boutons/bouton_retour.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=5]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/petites_images/dos.PNG" type="Texture" id=6]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/petites_images/gauche.PNG" type="Texture" id=7]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/petites_images/bras.PNG" type="Texture" id=8]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/petites_images/queue.PNG" type="Texture" id=9]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=12]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/petites_images/tete.PNG" type="Texture" id=13]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/petites_images/cage_thora.PNG" type="Texture" id=14]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/t-rex/petites_images/droite.PNG" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "bassin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "bras",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "cage_thora",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dos",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": false,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "bassin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "bras",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "cage_thora",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dos",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "bassin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "bras",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "cage_thora",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dos",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "bassin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "bras",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "cage_thora",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dos",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "bassin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "bras",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "cage_thora",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "bassin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "bras",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dos",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "bassin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "cage_thora",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dos",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "bras",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "cage_thora",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "dos",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[node name="puzzle_trex" type="Node2D"]
+script = ExtResource( 3 )
+global_id = "puzzle_trex"
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="tete_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 2108, 451 )
+script = ExtResource( 12 )
+global_id = "tete_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/tete_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/tete_deb"]
+position = Vector2( -538, -255 )
+frames = SubResource( 1 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/tete_deb"]
+polygon = PoolVector2Array( -650, -324, -598, -335, -559, -341, -533, -362, -521, -363, -495, -363, -483, -363, -445, -350, -435, -337, -421, -308, -422, -290, -426, -274, -414, -261, -411, -261, -415, -247, -411, -239, -408, -234, -421, -217, -429, -209, -440, -193, -450, -181, -477, -165, -506, -163, -516, -160, -542, -155, -556, -151, -585, -140, -611, -136, -624, -137, -635, -165, -631, -190, -618, -198, -607, -199, -591, -205, -569, -213, -539, -242, -541, -244, -575, -240, -592, -235, -628, -230, -649, -228, -667, -265, -661, -298 )
+
+[node name="queue_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1867, 1297 )
+script = ExtResource( 12 )
+global_id = "queue_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/queue_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/queue_deb"]
+position = Vector2( -291, -391 )
+frames = SubResource( 2 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/queue_deb"]
+position = Vector2( -1, 5 )
+polygon = PoolVector2Array( -491, -502, -472, -506, -437, -506, -423, -498, -393, -468, -361, -429, -321, -394, -232, -339, -196, -331, -142, -328, -110, -358, -91, -381, -82, -346, -118, -302, -153, -287, -259, -290, -323, -304, -392, -335, -435, -371, -461, -382, -492, -441, -501, -467, -501, -494 )
+
+[node name="gauche_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1901, 658 )
+script = ExtResource( 12 )
+global_id = "gauche_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/gauche_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/gauche_deb"]
+position = Vector2( -55, 138 )
+frames = SubResource( 3 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/gauche_deb"]
+polygon = PoolVector2Array( -89, -84, -123, -76, -137, -58, -130, -40, -117, -28, -111, -27, -108, -6, -108, 6, -105, 26, -104, 50, -100, 66, -99, 82, -88, 124, -85, 131, -81, 150, -62, 155, -55, 163, -40, 179, -38, 184, -23, 193, -23, 210, -22, 228, -20, 245, -20, 265, -35, 288, -41, 300, -52, 308, -66, 317, -75, 324, -94, 336, -99, 348, -94, 353, -87, 350, -72, 352, -64, 357, -45, 357, -29, 357, -17, 349, -7, 341, 2, 324, 8, 314, 10, 297, 12, 271, 12, 262, 14, 247, 18, 238, 20, 226, 20, 210, 13, 191, -1, 177, -9, 158, -20, 142, -26, 132, -32, 128, -37, 102, -39, 95, -47, 85, -62, 69, -65, 55, -65, 39, -64, 18, -64, -8, -64, -19, -67, -53, -73, -64, -73, -68, -76, -83, -80, -84 )
+
+[node name="droite_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 122, 216 )
+script = ExtResource( 12 )
+global_id = "droite_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/droite_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/droite_deb"]
+position = Vector2( 1569, 534 )
+frames = SubResource( 4 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/droite_deb"]
+polygon = PoolVector2Array( 1635, 347, 1621, 359, 1614, 375, 1593, 400, 1587, 409, 1579, 427, 1567, 439, 1554, 450, 1548, 462, 1556, 476, 1558, 479, 1551, 485, 1559, 497, 1564, 509, 1578, 537, 1586, 556, 1586, 570, 1590, 588, 1593, 607, 1593, 627, 1593, 641, 1580, 659, 1566, 678, 1560, 683, 1540, 686, 1524, 698, 1507, 696, 1493, 707, 1494, 715, 1505, 716, 1505, 720, 1506, 726, 1530, 726, 1545, 727, 1573, 727, 1592, 721, 1603, 715, 1615, 689, 1620, 682, 1627, 674, 1622, 644, 1636, 626, 1636, 600, 1631, 570, 1620, 556, 1612, 528, 1612, 507, 1609, 487, 1605, 472, 1604, 460, 1607, 441, 1618, 417, 1628, 398, 1643, 382, 1642, 370, 1642, 360, 1642, 350 )
+
+[node name="dos_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1989, 849 )
+script = ExtResource( 12 )
+global_id = "dos_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/dos_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/dos_deb"]
+position = Vector2( -419, -145 )
+frames = SubResource( 5 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/dos_deb"]
+polygon = PoolVector2Array( -429, -240, -440, -226, -450, -212, -451, -201, -464, -189, -468, -161, -471, -142, -470, -123, -451, -102, -438, -85, -430, -73, -424, -64, -423, -52, -408, -46, -390, -46, -381, -55, -370, -67, -362, -76, -357, -95, -357, -119, -366, -144, -373, -170, -380, -181, -385, -195, -389, -211, -396, -227, -408, -237 )
+
+[node name="cage_thora_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1824, 527 )
+script = ExtResource( 12 )
+global_id = "thora_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/thora_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/cage_thora_deb"]
+position = Vector2( -280, -78 )
+frames = SubResource( 6 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/cage_thora_deb"]
+polygon = PoolVector2Array( -377, -166, -360, -169, -338, -172, -316, -176, -304, -176, -280, -176, -260, -176, -247, -178, -233, -178, -218, -176, -204, -172, -190, -169, -181, -165, -173, -156, -169, -147, -169, -127, -169, -111, -170, -100, -173, -78, -185, -46, -204, -15, -228, 8, -251, 26, -269, 39, -286, 53, -305, 56, -334, 47, -362, 21, -372, -15, -372, -37, -372, -61, -368, -78, -369, -91, -381, -116, -381, -127, -382, -148, -384, -158 )
+
+[node name="bras_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 648, -140 )
+script = ExtResource( 12 )
+global_id = "bras_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/bras_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/bras_deb"]
+position = Vector2( 1147, 313 )
+frames = SubResource( 7 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/bras_deb"]
+polygon = PoolVector2Array( 1202, 189, 1180, 195, 1177, 200, 1177, 226, 1173, 243, 1163, 257, 1154, 268, 1125, 282, 1108, 282, 1102, 290, 1102, 310, 1104, 327, 1106, 338, 1097, 349, 1084, 362, 1081, 376, 1081, 390, 1093, 409, 1098, 424, 1101, 425, 1107, 429, 1133, 422, 1139, 415, 1129, 405, 1119, 394, 1111, 386, 1111, 370, 1118, 363, 1128, 356, 1140, 356, 1144, 374, 1144, 394, 1147, 414, 1178, 428, 1170, 403, 1168, 395, 1185, 395, 1192, 384, 1182, 377, 1179, 361, 1194, 339, 1201, 337, 1218, 324, 1222, 316, 1208, 307, 1200, 296, 1184, 280, 1191, 266, 1197, 246, 1204, 219, 1208, 210 )
+
+[node name="bassin_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1892, 451 )
+script = ExtResource( 12 )
+global_id = "bassin_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/bassin_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/bassin_deb"]
+position = Vector2( -144, -17 )
+frames = SubResource( 8 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/bassin_deb"]
+polygon = PoolVector2Array( -145, -153, -168, -157, -183, -154, -181, -143, -181, -131, -185, -122, -188, -114, -187, -103, -186, -93, -186, -87, -191, -74, -191, -59, -196, -56, -204, -43, -210, -30, -209, -15, -212, 3, -212, 18, -215, 39, -217, 50, -217, 64, -218, 75, -218, 78, -225, 80, -238, 82, -244, 84, -248, 91, -248, 101, -239, 107, -232, 112, -226, 119, -213, 125, -199, 127, -180, 122, -172, 119, -163, 114, -159, 109, -152, 100, -159, 94, -167, 87, -171, 78, -166, 68, -161, 60, -150, 42, -139, 25, -135, 13, -129, -11, -110, -14, -100, -19, -103, -35, -116, -44, -117, -54, -112, -65, -102, -72, -93, -72, -83, -60, -72, -54, -61, -56, -50, -62, -42, -67, -48, -85, -55, -94, -72, -112, -90, -125, -112, -135, -134, -145 )
+
+[node name="tete_placee" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 2103, 455 )
+script = ExtResource( 12 )
+global_id = "tete"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/tete_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/tete_placee"]
+position = Vector2( -1680, -172 )
+frames = SubResource( 1 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/tete_placee"]
+position = Vector2( -1142, 82 )
+polygon = PoolVector2Array( -639, -327, -598, -335, -547, -347, -533, -362, -521, -363, -495, -372, -474, -373, -441, -355, -423, -337, -409, -310, -405, -287, -401, -271, -395, -263, -393, -255, -396, -246, -411, -239, -433, -243, -453, -215, -455, -206, -468, -197, -470, -181, -477, -165, -503, -159, -511, -155, -535, -150, -547, -146, -569, -137, -592, -136, -615, -142, -622, -150, -632, -170, -624, -180, -605, -184, -586, -193, -566, -210, -539, -242, -541, -244, -573, -242, -592, -242, -621, -245, -636, -247, -652, -246, -664, -267, -661, -298, -651, -316 )
+
+[node name="queue_placee" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1365, 965 )
+script = ExtResource( 12 )
+global_id = "queue"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/queue_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/queue_placee"]
+position = Vector2( -285, -387 )
+frames = SubResource( 2 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/queue_placee"]
+position = Vector2( -1, 5 )
+polygon = PoolVector2Array( -491, -502, -472, -506, -437, -506, -423, -498, -389, -474, -354, -435, -320, -402, -283, -371, -241, -345, -230, -342, -203, -336, -196, -331, -142, -328, -105, -353, -66, -420, -70, -381, -82, -346, -97, -323, -118, -302, -153, -285, -212, -276, -260, -280, -323, -304, -392, -335, -435, -371, -461, -382, -492, -441, -501, -467, -501, -494 )
+
+[node name="gauche_placee" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 959, 541 )
+script = ExtResource( 12 )
+global_id = "gauche"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/gauche_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/gauche_placee"]
+position = Vector2( -56, 138 )
+frames = SubResource( 3 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/gauche_placee"]
+polygon = PoolVector2Array( -89, -84, -123, -76, -137, -58, -130, -40, -117, -28, -111, -27, -108, -6, -108, 6, -105, 26, -104, 50, -100, 66, -97, 89, -88, 124, -85, 131, -81, 150, -62, 155, -55, 163, -40, 179, -38, 184, -23, 193, -23, 210, -22, 228, -20, 245, -20, 265, -35, 288, -41, 300, -52, 308, -66, 317, -75, 324, -94, 336, -99, 348, -94, 353, -87, 350, -72, 352, -64, 357, -45, 357, -29, 357, -17, 349, -7, 341, 2, 324, 8, 314, 10, 297, 12, 271, 12, 262, 14, 247, 18, 238, 20, 226, 20, 210, 13, 191, -1, 177, -9, 158, -20, 142, -26, 132, -32, 128, -37, 102, -39, 95, -47, 85, -62, 69, -65, 55, -65, 39, -64, 18, -64, -8, -64, -19, -67, -53, -73, -64, -73, -68, -76, -83, -80, -84 )
+
+[node name="droite_placee" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( -887, 159 )
+script = ExtResource( 12 )
+global_id = "droite"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/droite_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/droite_placee"]
+position = Vector2( 1569, 535 )
+frames = SubResource( 4 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/droite_placee"]
+polygon = PoolVector2Array( 1635, 347, 1621, 359, 1614, 375, 1593, 400, 1587, 409, 1579, 427, 1567, 439, 1554, 450, 1548, 462, 1556, 476, 1558, 479, 1551, 485, 1559, 497, 1564, 509, 1578, 537, 1586, 556, 1586, 570, 1590, 588, 1593, 607, 1593, 627, 1593, 641, 1580, 659, 1566, 678, 1560, 683, 1540, 686, 1524, 698, 1507, 696, 1493, 707, 1494, 715, 1505, 716, 1505, 720, 1506, 726, 1530, 726, 1545, 727, 1573, 727, 1592, 721, 1603, 715, 1615, 689, 1620, 682, 1627, 674, 1622, 644, 1636, 626, 1636, 600, 1631, 570, 1620, 556, 1612, 528, 1612, 507, 1609, 487, 1605, 472, 1604, 460, 1607, 441, 1618, 417, 1628, 398, 1643, 382, 1642, 370, 1642, 360, 1642, 350 )
+
+[node name="dos_place" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 959, 535 )
+script = ExtResource( 12 )
+global_id = "dos"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/dos_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/dos_place"]
+position = Vector2( -416, -135 )
+frames = SubResource( 5 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/dos_place"]
+polygon = PoolVector2Array( -429, -240, -440, -226, -450, -212, -451, -201, -464, -189, -468, -161, -471, -142, -470, -123, -451, -102, -438, -85, -430, -73, -424, -64, -423, -52, -408, -46, -390, -46, -381, -55, -370, -67, -362, -76, -357, -95, -357, -119, -366, -144, -373, -170, -380, -181, -385, -195, -389, -211, -396, -227, -408, -237 )
+
+[node name="cage_thora_placee" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 956, 539 )
+script = ExtResource( 12 )
+global_id = "thora"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/thora_pla.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/cage_thora_placee"]
+position = Vector2( -276, -78 )
+frames = SubResource( 6 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/cage_thora_placee"]
+polygon = PoolVector2Array( -377, -166, -360, -169, -338, -172, -316, -176, -304, -176, -280, -176, -260, -176, -247, -178, -233, -178, -218, -176, -204, -172, -190, -169, -181, -165, -173, -156, -169, -147, -169, -127, -169, -111, -170, -100, -173, -78, -185, -46, -204, -15, -228, 8, -251, 26, -269, 39, -286, 53, -305, 56, -334, 47, -362, 21, -372, -15, -372, -37, -372, -61, -368, -78, -369, -91, -381, -116, -381, -127, -382, -148, -384, -158 )
+
+[node name="bras_places" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( -581, 203 )
+script = ExtResource( 12 )
+global_id = "bras"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/bras_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/bras_places"]
+position = Vector2( 1148, 311 )
+frames = SubResource( 7 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/bras_places"]
+polygon = PoolVector2Array( 1202, 189, 1180, 195, 1177, 200, 1177, 226, 1173, 243, 1163, 257, 1154, 268, 1125, 282, 1108, 282, 1102, 290, 1102, 310, 1104, 327, 1106, 338, 1097, 349, 1084, 362, 1081, 376, 1081, 390, 1093, 409, 1098, 424, 1101, 425, 1107, 429, 1133, 422, 1139, 415, 1129, 405, 1119, 394, 1111, 386, 1111, 370, 1118, 363, 1128, 356, 1140, 356, 1144, 374, 1144, 394, 1147, 414, 1178, 428, 1170, 403, 1168, 395, 1185, 395, 1192, 384, 1182, 377, 1179, 361, 1194, 339, 1201, 337, 1218, 324, 1222, 316, 1208, 307, 1200, 296, 1184, 280, 1191, 266, 1197, 246, 1204, 219, 1208, 210 )
+
+[node name="bassin_place" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 959, 540 )
+script = ExtResource( 12 )
+global_id = "bassin"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/t-rex/puzzle_trex/scripts/bassin_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/bassin_place"]
+position = Vector2( -145, -18 )
+frames = SubResource( 8 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/bassin_place"]
+polygon = PoolVector2Array( -145, -153, -168, -157, -183, -154, -181, -143, -181, -131, -185, -122, -188, -114, -187, -103, -186, -93, -186, -87, -191, -74, -191, -59, -196, -56, -204, -43, -210, -30, -209, -15, -212, 3, -212, 18, -215, 39, -217, 50, -217, 64, -218, 75, -218, 78, -225, 80, -238, 82, -244, 84, -248, 91, -248, 101, -239, 107, -232, 112, -226, 119, -213, 125, -199, 127, -180, 122, -172, 119, -163, 114, -159, 109, -152, 100, -159, 94, -167, 87, -171, 78, -166, 68, -161, 60, -150, 42, -139, 25, -135, 13, -129, -11, -110, -14, -100, -19, -103, -35, -116, -44, -117, -54, -112, -65, -102, -72, -93, -72, -83, -60, -72, -54, -61, -56, -50, -62, -42, -67, -48, -85, -55, -94, -72, -112, -90, -125, -112, -135, -134, -145 )
+
+[node name="bouton_retour" parent="." instance=ExtResource( 4 )]
