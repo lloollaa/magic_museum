@@ -1,0 +1,10 @@
+:look
+>[!chaise_proche_placee]	
+	set_state chaise_proche placee
+	set_global chaise_proche_placee true
+
+>[chaise_loin_placee,chaise_proche_placee,tableau_place]
+	wait 2
+	set_state animation_fin gagne
+	wait 3
+	change_scene res://salles/aile_artistique/aile_artistique.tscn
