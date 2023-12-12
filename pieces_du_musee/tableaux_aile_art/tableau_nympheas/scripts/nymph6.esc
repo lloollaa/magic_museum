@@ -1,0 +1,11 @@
+:use
+>[!nymph_6_ouvert]
+	set_state nymph_6 ouverture
+	set_global nymph_6_ouvert true
+
+>[nymph_1_ouvert,nymph_2_ouvert,nymph_3_ouvert,nymph_4_ouvert,nymph_5_ouvert,nymph_6_ouvert]
+	wait 2
+	set_state animation_fin gagne
+	wait 3
+	change_scene res://salles/aile_artistique/aile_artistique.tscn
+	set_global nymphea_complete true
