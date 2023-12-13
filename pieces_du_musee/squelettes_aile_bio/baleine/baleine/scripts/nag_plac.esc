@@ -4,7 +4,7 @@
 	stop
 
 >[eq piece 1]
-	set_state nag bras
+	set_state nag tete
 	set_global nag false
 	set_global piece 0
 
@@ -35,5 +35,6 @@
 	set_global piece 0
 
 >[nag, thora, dos, tete, queue, machoire]
+	set_global baleine true
 	wait 2
 	change_scene res://salles/aile_biologique/aile_biologique.tscn

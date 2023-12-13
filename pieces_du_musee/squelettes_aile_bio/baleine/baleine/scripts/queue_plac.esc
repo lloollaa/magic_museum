@@ -35,5 +35,6 @@
 	set_state queue_deb vide
 
 >[nag, thora, dos, tete, queue, machoire]
+	set_global baleine true
 	wait 2
 	change_scene res://salles/aile_biologique/aile_biologique.tscn
