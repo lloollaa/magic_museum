@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=3]
+[ext_resource path="res://menu/bouton_start_page.PNG" type="Texture" id=4]
+[ext_resource path="res://menu/fond_start_page.PNG" type="Texture" id=5]
+[ext_resource path="res://menu/bouton_strat_page_clique.PNG" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "clique",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 205.75, 47 )
+
+[node name="start_page" type="Node2D"]
+script = ExtResource( 3 )
+global_id = "start_page"
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="ESCItem" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 1 )
+global_id = "bouton"
+esc_script = "res://menu/start_page/scripts/start.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/ESCItem"]
+position = Vector2( 958, 539 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/ESCItem"]
+position = Vector2( 962.25, 848 )
+shape = SubResource( 2 )

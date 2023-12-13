@@ -1,0 +1,3 @@
+:use
+set_state bouton clique
+change_scene res://salles/hall/hall.tscn
