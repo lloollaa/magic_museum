@@ -10,3 +10,6 @@
 >[eq ESC_LAST_SCENE aile_historique]
 	change_scene res://salles/aile_historique/aile_historique.tscn
 	stop
+>[eq ESC_LAST_SCENE hall]
+	change_scene res://salles/hall/hall.tscn
+	stop
