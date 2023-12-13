@@ -1,2 +1,2 @@
 :init
-change_scene res://salles/my_menu/my_menu.tscn
+change_scene res://menu/start_page/start_page.tscn
