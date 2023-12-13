@@ -6,5 +6,6 @@
 >[chaise_loin_placee,chaise_proche_placee,tableau_place]
 	wait 2
 	set_state animation_fin gagne
+	set_global chambre true
 	wait 3
 	change_scene res://salles/aile_artistique/aile_artistique.tscn
