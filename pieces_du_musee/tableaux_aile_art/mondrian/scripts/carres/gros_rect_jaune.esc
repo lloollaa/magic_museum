@@ -13,5 +13,6 @@
 	set_global grj false
 
 > [gc, c, rjv, rjh, grj, bbd, nmb, rv]
+	set_global mondrian true
 	wait 5
 	change_scene res://salles/aile_artistique/aile_artistique.tscn
