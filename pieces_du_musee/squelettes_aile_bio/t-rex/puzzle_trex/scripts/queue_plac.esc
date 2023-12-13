@@ -45,5 +45,6 @@
 	set_state queue_deb vide
 
 >[bassin, thora, bras, dos, droite, gauche, tete, queue]
-wait 2
-change_scene res://salles/aile_biologique/aile_biologique.tscn
+	set_global trex true
+	wait 2
+	change_scene res://salles/aile_biologique/aile_biologique.tscn

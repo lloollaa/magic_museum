@@ -44,5 +44,6 @@
 	set_global bras false
 	set_global piece 0
 >[bassin, thora, bras, dos, droite, gauche, tete, queue]
-wait 2
-change_scene res://salles/aile_biologique/aile_biologique.tscn
+	set_global trex true
+	wait 2
+	change_scene res://salles/aile_biologique/aile_biologique.tscn
