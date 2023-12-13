@@ -1,0 +1,45 @@
+:use
+>[eq piece 0]
+	set_global piece 1
+	stop
+
+>[eq piece 1]
+	set_state gauche_der tete
+	set_global gauche_der false
+	set_global piece 0
+
+>[eq piece 2]
+	set_state gauche_der gagne
+	set_global gauche_der true
+	set_global piece 0
+	set_state gauche_der_deb vide
+
+>[eq piece 3]
+	set_state gauche_der gauche_dev
+	set_global gauche_der false
+	set_global piece 0
+
+>[eq piece 4]
+	set_state gauche_der thora
+	set_global gauche_der false
+	set_global piece 0
+
+>[eq piece 5]
+	set_state gauche_der droite_dev
+	set_global gauche_der false
+	set_global piece 0
+
+>[eq piece 6]
+	set_state gauche_der queue
+	set_global gauche_der false
+	set_global piece 0
+
+>[eq piece 7]
+	set_state gauche_der droite_der
+	set_global gauche_der false
+	set_global piece 0
+
+>[thora, tete, queue, droite_dev, droite_der, gauche_der, gauche_dev]
+	set_global mammouth true
+	wait 2
+	change_scene res://salles/aile_biologique/aile_biologique.tscn

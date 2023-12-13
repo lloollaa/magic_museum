@@ -1,0 +1,566 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/fond_mammouth.PNG" type="Texture" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=3]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/jambe_droite_dev.PNG" type="Texture" id=4]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/cage_tho.PNG" type="Texture" id=5]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/queue.PNG" type="Texture" id=6]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/jambe_gauche_derr.PNG" type="Texture" id=7]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/tete.PNG" type="Texture" id=8]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/jambe_droite_derr.PNG" type="Texture" id=9]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/jambe_gauche_dev.PNG" type="Texture" id=10]
+[ext_resource path="res://boutons/bouton_retour.tscn" type="PackedScene" id=11]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "droite_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "droite_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "gauche_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "droite_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "gauche_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "thora",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "droite_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "gauche_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "thora",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "droite_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "droite_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "gauche_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "thora",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "droite_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "droite_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "thora",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "droite_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "droite_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "gauche_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "thora",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "droite_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "droite_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "gagne",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "gauche_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "gauche_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "thora",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "vide",
+"speed": 5.0
+} ]
+
+[node name="mammouth" type="Node2D"]
+script = ExtResource( 3 )
+global_id = "mammouth"
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="bouton_retour" parent="RoomObjects" instance=ExtResource( 11 )]
+
+[node name="cage_tho_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1589, 231 )
+script = ExtResource( 12 )
+global_id = "thora_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/thora_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/cage_tho_deb"]
+frames = SubResource( 1 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/cage_tho_deb"]
+polygon = PoolVector2Array( -135, -113, -135, -132, -135, -139, -121, -139, -117, -131, -118, -111, -113, -104, -108, -109, -105, -120, -100, -128, -94, -140, -90, -145, -82, -146, -73, -142, -66, -142, -57, -142, -42, -139, -33, -135, -20, -133, -16, -131, -25, -115, -7, -127, -1, -125, 3, -123, 10, -121, 12, -114, 20, -120, 32, -119, 49, -118, 49, -110, 56, -115, 65, -113, 82, -110, 93, -105, 93, -98, 99, -95, 115, -91, 131, -79, 141, -75, 151, -65, 153, -59, 153, -43, 147, -38, 137, -38, 130, -32, 121, -33, 121, -23, 118, -14, 113, -7, 102, -5, 80, -4, 73, 0, 62, 1, 50, 8, 33, 17, 27, 24, 9, 41, -3, 51, -16, 63, -29, 78, -40, 95, -50, 106, -54, 114, -63, 125, -89, 130, -81, 137, -85, 144, -96, 145, -106, 143, -116, 137, -123, 132, -125, 119, -133, 118, -128, 85, -128, 56, -129, 35, -136, 26, -137, 14, -138, 4, -135, -3, -129, -11, -115, -32, -99, -45, -92, -56, -92, -64, -103, -80, -125, -99, -129, -108 )
+
+[node name="droite_der_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1731, 791 )
+script = ExtResource( 12 )
+global_id = "droite_der_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/droite_der_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/droite_der_deb"]
+frames = SubResource( 2 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/droite_der_deb"]
+polygon = PoolVector2Array( -49, -195, -57, -189, -65, -198, -73, -196, -76, -189, -74, -178, -63, -164, -50, -131, -49, -106, -47, -83, -45, -66, -44, -52, -43, -33, -45, -22, -46, -17, -49, -7, -47, 5, -43, 17, -37, 21, -30, 16, -28, 29, -25, 34, -8, 66, 3, 85, 8, 101, 13, 115, 21, 128, 22, 134, 17, 151, 13, 161, -4, 177, -4, 188, 11, 185, 9, 191, 14, 196, 29, 191, 36, 183, 37, 195, 44, 197, 49, 192, 52, 184, 51, 163, 65, 161, 69, 151, 80, 139, 77, 123, 68, 119, 61, 124, 52, 103, 39, 67, 29, 42, 21, 22, 15, 6, 2, -3, -6, -23, -7, -46, -10, -74, -17, -106, -19, -137, -10, -145, 0, -161, 7, -175, 8, -189, -1, -195, -20, -194, -32, -199 )
+
+[node name="droite_dev_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1494, 832 )
+script = ExtResource( 12 )
+global_id = "droite_dev_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/droite_dev_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/droite_dev_deb"]
+frames = SubResource( 3 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/droite_dev_deb"]
+polygon = PoolVector2Array( 31, -160, 31, -147, 31, -125, 28, -116, 27, -103, 23, -86, 15, -69, 12, -59, 5, -21, 2, -10, 1, 1, -6, 14, -13, 31, -19, 42, -24, 49, -26, 60, -24, 69, -19, 71, -21, 79, -24, 83, -26, 101, -26, 110, -28, 116, -35, 127, -36, 131, -45, 140, -59, 151, -56, 155, -50, 153, -46, 158, -39, 158, -30, 152, -25, 152, -16, 144, -11, 136, -11, 148, -12, 152, -7, 155, -3, 151, 3, 142, 5, 133, 4, 113, 4, 109, 15, 102, 17, 90, 8, 76, 9, 66, 10, 62, 10, 52, 13, 47, 17, 32, 30, 2, 40, -15, 46, -22, 49, -29, 56, -37, 65, -43, 67, -52, 59, -60, 59, -68, 59, -91, 52, -119, 51, -125, 42, -140 )
+
+[node name="gauche_der_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1581, 752 )
+script = ExtResource( 12 )
+global_id = "gauche_der_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/gauche_der_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/gauche_der_deb"]
+frames = SubResource( 4 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/gauche_der_deb"]
+polygon = PoolVector2Array( -8, -244, -15, -252, -22, -252, -26, -244, -26, -232, -35, -230, -38, -224, -37, -212, -34, -202, -34, -186, -37, -176, -40, -162, -47, -149, -55, -139, -56, -131, -55, -121, -49, -115, -40, -116, -23, -124, -12, -136, -9, -135, -6, -123, 0, -112, 2, -106, 0, -74, -2, -43, -5, -27, -6, -5, -9, 5, -7, 10, -10, 19, -13, 27, -16, 34, -22.0512, 38.841, -26, 42, -29, 48, -29, 61, -25, 65, -18, 66, -18, 79, -16, 89, -16, 126, -18, 132, -17, 145, -20, 176, -25, 198, -33, 208, -47, 218, -55, 223, -55, 228, -48, 232, -34, 232, -20, 227, -11, 228, -1, 213, 11, 207, 23, 208, 31, 199, 31, 184, 21, 181, 12, 184, 7, 180, 11, 164, 15, 147, 15, 122, 17, 118, 17, 64, 20, 61, 20, 45, 14, 37, 13, 33, 14, 11, 15, -17, 20, -41, 21, -55, 24, -67, 31, -97, 31, -112, 26, -122, 27, -125, 36, -119, 48, -125, 60, -131, 61, -138, 61, -147, 56, -156, 38, -169, 32, -179, 26, -191, 25, -203, 20, -216, 15, -218, 1, -232 )
+
+[node name="gauche_dev_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1802, 708 )
+script = ExtResource( 12 )
+global_id = "gauche_dev_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/gauche_dev_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/gauche_dev_deb"]
+frames = SubResource( 5 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/gauche_dev_deb"]
+polygon = PoolVector2Array( -15, -277, -28, -263, -44, -250, -44, -233, -41, -230, -47, -216, -58, -194, -62, -180, -59, -165, -51, -170, -44, -176, -36, -169, -41, -159, -46, -148, -57, -143, -62, -135, -63, -119, -59, -101, -53, -81, -46, -64, -34, -44, -20, -15, -15, 7, -11, 26, -14, 45, -6, 54, -2, 69, 6, 91, 7, 105, 10, 116, 13, 133, 13, 155, 15, 186, 18, 190, 29, 195, 27, 219, 28, 232, 24, 237, 25, 242, 11, 254, 1, 262, -8, 264, -6, 272, 5.99998, 274, 20, 273, 21, 273, 33, 265, 29, 275, 33, 280, 42, 279, 59, 257, 59, 225, 65, 217, 64, 206, 54, 192, 51, 173, 48, 166, 45, 152, 42, 137, 39, 118, 38, 99, 45, 72, 54, 47, 52, 28, 40, 27, 26, 30, 24, 16, 21, 4, 16, -9, 3, -58, 0, -66, 2, -72, 2, -108, 4, -122, 2, -138, 0, -150, 5, -161, 21, -185, 31, -194, 46, -205, 47, -220, 45, -231, 22, -255, -2, -278 )
+
+[node name="queue_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1791, 206 )
+script = ExtResource( 12 )
+global_id = "queue_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/queue_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/queue_deb"]
+frames = SubResource( 6 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/queue_deb"]
+polygon = PoolVector2Array( -80, -117, -75, -123, -65, -123, -56, -121, -49, -119, -43, -113, -37, -101, -30, -99, -25, -95, -19, -95, -14, -89, -7, -89, 0, -84, 4, -77, 11, -77, 14, -73, 18, -69, 21, -69, 27, -64, 27, -57, 30, -57, 41, -46, 41, -41, 43, -39, 43, -35, 48, -32, 47, -27, 54, -21, 54, -14, 59, -7, 59, 3, 61, 5, 61, 33, 64, 41, 63, 60, 64, 74, 66, 96, 73, 125, 68, 125, 59, 99, 55, 76, 51, 45, 50, 37, 43, 12, 40, -2, 36, -13, 25, -26, 10, -44, -2, -56, -16, -65, -40, -77, -49, -80, -65, -98, -76, -110 )
+
+[node name="tete_deb" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1606, 363 )
+script = ExtResource( 12 )
+global_id = "tete_deb"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/tete_deb.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/tete_deb"]
+frames = SubResource( 7 )
+animation = "gagne"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/tete_deb"]
+polygon = PoolVector2Array( -241, -33, -235, -47, -226, -53, -221, -55, -204, -55, -200, -49, -200, -44, -207, -46, -214, -40, -216, -28, -212, -9, -204, 6, -188, 25, -178, 34, -174, 39, -158, 52, -134, 68, -118, 78, -104, 84, -117, 68, -130, 45, -145, 12, -144, 1, -139, 2, -122, 18, -113, 32, -99, 50, -93, 57, -79, 74, -67, 84, -55, 93, -39, 93, -24, 89, -16, 86, -3, 77, 14, 54, 21, 47, 22, 39, 30, 33, 48, -1, 53, -24, 54, -38, 57, -61, 66, -79, 79, -86, 114, -118, 128, -149, 135, -152, 147, -150, 156, -145, 189, -112, 189, -96, 184, -77, 187, -75, 192, -86, 205, -88, 207, -79, 211, -87, 222, -85, 228, -76, 233, -75, 233, -67, 242, -57, 242, -47, 235, -34, 229, -29, 224, -29, 215, -36, 208, -42, 197, -44, 193, -41, 180, -41, 176, -40, 166, -29, 173, -20, 179, -11, 183, 23, 167, 46, 140, 63, 109, 72, 100, 71, 100, 37, 98, 35, 99, 23, 106, 17, 101, 10, 95, 17, 92, 17, 92, 41, 87, 68, 75, 99, 52, 131, 32, 147, 16, 152, -6, 152, -20, 149, -37, 143, -50, 135, -75, 135, -79, 134, -110, 127, -144, 112, -170, 96, -206, 58, -229, 26, -242, -11 )
+
+[node name="cage_tho_plac" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 950, 441 )
+script = ExtResource( 12 )
+global_id = "thora"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/thora_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/cage_tho_plac"]
+frames = SubResource( 1 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/cage_tho_plac"]
+polygon = PoolVector2Array( -135, -113, -135, -132, -135, -139, -121, -139, -117, -131, -118, -111, -113, -104, -108, -109, -105, -120, -100, -128, -94, -140, -90, -145, -82, -146, -73, -142, -66, -142, -57, -142, -42, -139, -33, -135, -20, -133, -16, -131, -25, -115, -7, -127, -1, -125, 3, -123, 10, -121, 12, -114, 20, -120, 32, -119, 49, -118, 49, -110, 56, -115, 65, -113, 82, -110, 93, -105, 93, -98, 99, -95, 115, -91, 131, -79, 141, -75, 151, -65, 153, -59, 153, -43, 147, -38, 137, -38, 130, -32, 121, -33, 121, -23, 118, -14, 113, -7, 102, -5, -9, 117, -63, 125, -89, 130, -81, 137, -85, 144, -96, 145, -106, 143, -116, 137, -123, 132, -125, 119, -133, 118, -128, 85, -128, 56, -129, 35, -136, 26, -137, 14, -138, 4, -135, -3, -129, -11, -115, -32, -99, -45, -92, -56, -92, -64, -103, -80, -125, -99, -129, -108 )
+
+[node name="droite_der_plac" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1216, 688 )
+script = ExtResource( 12 )
+global_id = "droite_der"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/droite_der_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/droite_der_plac"]
+frames = SubResource( 2 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/droite_der_plac"]
+polygon = PoolVector2Array( -49, -195, -57, -189, -65, -198, -73, -196, -76, -189, -74, -178, -63, -164, -50, -131, -49, -106, -52, -14, -46, 75, -19, 103, 1, 147, 4, 169, -16, 186, -15, 196, 14, 206, 32, 205, 67, 204, 95, 200, 102, 182, 95, 143, 79, 106, 57, 71, 36, 34, 21, -2, 13, -33, 4, -84, -2, -112, -10, -145, 0, -161, 7, -175, 8, -189, -1, -195, -20, -194, -32, -199 )
+
+[node name="droite_dev_plac" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 751, 705 )
+script = ExtResource( 12 )
+global_id = "droite_dev"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/droite_dev_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/droite_dev_plac"]
+frames = SubResource( 3 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/droite_dev_plac"]
+polygon = PoolVector2Array( 31, -160, 31, -147, 13, -114, 4, -106, -1, -83, 1, -58, -6, -26, -12, -4, -19, 19, -24, 40, -33, 61, -37, 74, -40, 104, -44, 121, -49, 134, -59, 151, -65, 168, -45, 169, -26, 169, -7, 169, 19, 171, 36, 149, 48, 125, 50, 103, 48, 75, 45, 41, 44, 8, 40, -15, 46, -22, 49, -29, 56, -37, 65, -43, 67, -52, 59, -60, 59, -68, 59, -91, 52, -119, 51, -125, 42, -140 )
+
+[node name="gauche_der_plac" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1123, 627 )
+script = ExtResource( 12 )
+global_id = "gauche_der"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/gauche_der_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/gauche_der_plac"]
+frames = SubResource( 4 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/gauche_der_plac"]
+polygon = PoolVector2Array( -8, -244, -15, -252, -22, -252, -26, -244, -26, -232, -35, -230, -38, -224, -37, -212, -34, -202, -34, -186, -37, -176, -40, -162, -47, -149, -55, -139, -56, -131, -55, -121, -49, -115, -40, -116, -54, 62, -50, 101, -40, 163, -53, 201, -73, 243, -40, 245, -9, 246, 35, 244, 41, 198, 44, 149, 38, 126, 32, 86, 20, 45, 14, 11, 15, -17, 20, -41, 21, -55, 24, -67, 31, -97, 31, -112, 26, -122, 27, -125, 36, -119, 48, -125, 60, -131, 61, -138, 61, -147, 56, -156, 38, -169, 32, -179, 26, -191, 25, -203, 20, -216, 15, -218, 1, -232 )
+
+[node name="gauche_dev_plac" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 817, 601 )
+script = ExtResource( 12 )
+global_id = "gauche_dev"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/gauche_dev_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/gauche_dev_plac"]
+frames = SubResource( 5 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/gauche_dev_plac"]
+polygon = PoolVector2Array( -15, -277, -28, -263, -44, -250, -44, -233, -41, -230, -47, -216, -58, -194, -62, -180, -59, -165, -51, -170, -44, -176, -36, -169, -41, -159, -46, -148, -57, -143, -62, -135, -63, -119, -59, -101, -53, -81, -46, -64, -34, -44, -20, -15, -15, 7, -11, 26, -14, 45, -6, 54, -2, 69, -11, 114, -12, 145, -12, 178, -9, 210, -9, 241, -27, 266, -35, 277, -9, 285, 16, 287, 38, 287, 59, 288, 82, 286, 80, 242, 74, 210, 70, 189, 65, 156, 64, 131, 67, 99, 66, 59, 62, 43, 52, 28, 41, 16, 28, 9, 21, 4, 16, -9, 3, -58, 0, -66, 2, -72, 2, -108, 4, -122, 2, -138, 0, -150, 5, -161, 21, -185, 31, -194, 46, -205, 47, -220, 45, -231, 22, -255, -2, -278 )
+
+[node name="queue_plac" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1185, 496 )
+script = ExtResource( 12 )
+global_id = "queue"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/queue_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/queue_plac"]
+frames = SubResource( 6 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/queue_plac"]
+polygon = PoolVector2Array( -80, -117, -75, -123, -65, -123, -56, -121, -49, -119, -43, -113, -37, -101, -30, -99, -25, -95, -19, -95, -14, -89, -7, -89, 0, -84, 4, -77, 11, -77, 14, -73, 18, -69, 21, -69, 27, -64, 27, -57, 30, -57, 41, -46, 41, -41, 43, -39, 43, -35, 48, -32, 47, -27, 54, -21, 54, -14, 59, -7, 59, 3, 61, 5, 61, 33, 64, 41, 63, 60, 64, 74, 66, 96, 73, 125, 68, 125, 59, 99, 55, 76, 51, 45, 50, 37, 43, 12, 40, -2, 36, -13, 25, -26, 10, -44, -2, -56, -16, -65, -40, -77, -49, -80, -65, -98, -76, -110 )
+
+[node name="tete_plac" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 536, 430 )
+script = ExtResource( 12 )
+global_id = "tete"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/tete_plac.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/tete_plac"]
+frames = SubResource( 7 )
+animation = "vide"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/tete_plac"]
+polygon = PoolVector2Array( 22, 127, 2, 106, -1, 78, 5, 54, 13, 23, 20, -3, 32, -32, 57, -61, 66, -79, 79, -86, 89, -128, 119, -161, 145, -162, 174, -159, 198, -148, 201, -111, 189, -96, 184, -77, 187, -75, 192, -86, 205, -88, 207, -79, 211, -87, 222, -85, 228, -76, 233, -75, 233, -67, 242, -57, 242, -47, 235, -34, 229, -29, 224, -29, 215, -36, 208, -42, 183, 23, 184, 43, 173, 71, 147, 117, 101, 130, 67, 137 )
