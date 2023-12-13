@@ -7,5 +7,5 @@
 	wait 2
 	set_state animation_fin gagne
 	wait 3
+	set_global nymphea true
 	change_scene res://salles/aile_artistique/aile_artistique.tscn
-	set_global nymphea_complete true
