@@ -1,0 +1,3 @@
+:setup
+set_global piece 9
+set_state carre default
