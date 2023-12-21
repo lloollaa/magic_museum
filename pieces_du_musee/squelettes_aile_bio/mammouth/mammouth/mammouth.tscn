@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/fond_mammouth.PNG" type="Texture" id=1]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
@@ -12,6 +12,13 @@
 [ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/images/jambe_gauche_dev.PNG" type="Texture" id=10]
 [ext_resource path="res://boutons/bouton_retour.tscn" type="PackedScene" id=11]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=12]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/carres/carre_gauche_dev.PNG" type="Texture" id=13]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/carres/carre_droite_der.PNG" type="Texture" id=14]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/carres/carre_gauche_der.PNG" type="Texture" id=15]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/carres/carre_thora.PNG" type="Texture" id=16]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/carres/carre_tete.PNG" type="Texture" id=17]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/carres/carre_droite_dev.PNG" type="Texture" id=18]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/mammouth/carres/carre_queue.PNG" type="Texture" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -314,9 +321,53 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "droite_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "droite_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "gauche_der",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "gauche_dev",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "thora",
+"speed": 5.0
+} ]
+
 [node name="mammouth" type="Node2D"]
 script = ExtResource( 3 )
 global_id = "mammouth"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/mammouth/mammouth/scripts/mamouth.esc"
 
 [node name="Background" type="TextureRect" parent="."]
 mouse_filter = 2
@@ -564,3 +615,14 @@ animation = "vide"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/tete_plac"]
 polygon = PoolVector2Array( 22, 127, 2, 106, -1, 78, 5, 54, 13, 23, 20, -3, 32, -32, 57, -61, 66, -79, 79, -86, 89, -128, 119, -161, 145, -162, 174, -159, 198, -148, 201, -111, 189, -96, 184, -77, 187, -75, 192, -86, 205, -88, 207, -79, 211, -87, 222, -85, 228, -76, 233, -75, 233, -67, 242, -57, 242, -47, 235, -34, 229, -29, 224, -29, 215, -36, 208, -42, 183, 23, 184, 43, 173, 71, 147, 117, 101, 130, 67, 137 )
+
+[node name="carre" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 12 )
+global_id = "carre"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/carre"]
+position = Vector2( 960, 540 )
+frames = SubResource( 8 )
