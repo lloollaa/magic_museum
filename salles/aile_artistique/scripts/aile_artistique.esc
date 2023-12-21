@@ -5,7 +5,7 @@
 # sees the room). Reset movable objects to their start positions here.
 
 :setup
-
+#en fonction du tableau
 > [eq ESC_LAST_SCENE mondrian]
 	teleport persona sortie_mondrian
 	stop
@@ -14,6 +14,17 @@
 	stop
 > [eq ESC_LAST_SCENE tableau_nymphea]
 	teleport persona sortie_nymphea
+	stop
+
+#en fonction des plaquettes
+> [eq ESC_LAST_SCENE plaquette_chambre]
+	teleport persona sortie_plaq_chambre
+	stop
+> [eq ESC_LAST_SCENE plaquette_mondrian]
+	teleport persona sortie_plaq_mondrian
+	stop
+> [eq ESC_LAST_SCENE plaquette_nympheas]
+	teleport persona sortie_plaq_nympheas
 	stop
 
 
