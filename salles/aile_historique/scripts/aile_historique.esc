@@ -5,7 +5,15 @@
 # sees the room). Reset movable objects to their start positions here.
 
 :setup
-
+> [eq ESC_LAST_SCENE plaquette_bastille]
+	teleport persona sortie_bastille
+	stop
+> [eq ESC_LAST_SCENE plaquette_serment]
+	teleport persona sortie_serment
+	stop
+> [eq ESC_LAST_SCENE plaquette_tuiles]
+	teleport persona sortie_tuiles
+	stop
 
 
 # ":ready" runs after any events configured in setup complete. It is used to
@@ -14,7 +22,6 @@
 # a specific location in the room before giving control to the player.)
 
 :ready
-
 
 
 # Code examples - feel free to delete this section
