@@ -5,17 +5,27 @@
 # sees the room). Reset movable objects to their start positions here.
 
 :setup
-
+#en fonction des salles
 > [eq ESC_LAST_SCENE puzzle_trex]
 	teleport persona sortie_trex
 	stop
 > [eq ESC_LAST_SCENE baleine]
 	teleport persona sortie_baleine
 	stop
-#> [eq ESC_LAST_SCENE tableau_nymphea]
-#	teleport persona sortie_nymphea
-#	stop
+> [eq ESC_LAST_SCENE mammouth]
+	teleport persona sortie_mammouth
+	stop
 
+#en fonction des plaquettes
+> [eq ESC_LAST_SCENE plaquette_baleine]
+	teleport persona sortie_plaq_baleine
+	stop
+> [eq ESC_LAST_SCENE plaquette_trex]
+	teleport persona sortie_plaq_trex
+	stop
+> [eq ESC_LAST_SCENE plaquette_mammouth]
+	teleport persona sortie_plaq_mammouth
+	stop
 
 # ":ready" runs after any events configured in setup complete. It is used to
 # configure everything that happens after the transition-in (if any) completes.
