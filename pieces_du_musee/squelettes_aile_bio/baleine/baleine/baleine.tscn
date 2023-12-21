@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://pieces_du_musee/squelettes_aile_bio/baleine/baleine.PNG" type="Texture" id=1]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
@@ -11,6 +11,12 @@
 [ext_resource path="res://pieces_du_musee/squelettes_aile_bio/baleine/cage_thora.PNG" type="Texture" id=9]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=10]
 [ext_resource path="res://boutons/bouton_retour.tscn" type="PackedScene" id=11]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/baleine/carres/tete.PNG" type="Texture" id=12]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/baleine/carres/queue.PNG" type="Texture" id=13]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/baleine/carres/machoire.PNG" type="Texture" id=14]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/baleine/carres/nageoire.PNG" type="Texture" id=15]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/baleine/carres/thora.PNG" type="Texture" id=16]
+[ext_resource path="res://pieces_du_musee/squelettes_aile_bio/baleine/carres/dos.PNG" type="Texture" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -253,12 +259,51 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "dos",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "machoire",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "nageoire",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "queue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "tete",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "thora",
+"speed": 5.0
+} ]
+
 [node name="baleine" type="Node2D"]
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 global_id = "baleine"
+esc_script = "res://pieces_du_musee/squelettes_aile_bio/baleine/baleine/scripts/baleine.esc"
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 1920.0
@@ -387,13 +432,13 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/thora_plac"]
-position = Vector2( 636, 514 )
+position = Vector2( 640, 508 )
 frames = SubResource( 7 )
 animation = "vide"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/thora_plac"]
-visible = false
-polygon = PoolVector2Array( 470, 450, 482, 442, 497, 439, 525, 436, 534, 433, 551, 432, 562, 432, 572, 426, 580, 428, 601, 426, 614, 423, 623, 424, 634, 424, 637, 419, 649, 422, 657, 419, 695, 420, 718, 422, 756, 423, 781, 430, 797, 434, 794, 445, 790, 449, 785, 454, 793, 462, 795, 474, 797, 478, 794, 488, 805, 508, 808, 523, 811, 534, 802, 544, 792, 545, 774, 566, 771, 558, 722, 587, 704, 588, 693, 593, 678, 595, 643, 600, 614, 600, 600, 596, 585, 519, 593, 606, 588, 607, 577, 600, 570, 582, 559, 580, 548, 560, 546, 545, 543, 525, 549, 516, 551, 506, 570, 495, 593, 492, 593, 482, 586, 474, 584, 462, 577, 468, 558, 461, 538, 457, 515, 461, 498, 468, 481, 469, 471, 461 )
+position = Vector2( 7, -5 )
+polygon = PoolVector2Array( 470, 450, 482, 442, 502, 412, 531, 413, 548, 411, 568, 411, 586, 412, 604, 413, 620, 412, 632, 412, 646, 411, 657, 413, 694, 414, 715, 417, 756, 423, 781, 430, 797, 434, 794, 445, 790, 449, 785, 454, 789, 462, 791, 475, 791, 481, 794, 488, 805, 508, 808, 523, 811, 534, 802, 544, 792, 545, 774, 566, 771, 558, 722, 587, 704, 588, 693, 593, 678, 595, 643, 600, 614, 600, 600, 596, 585, 519, 593, 606, 588, 607, 577, 600, 570, 582, 559, 580, 548, 560, 546, 545, 543, 525, 549, 516, 551, 506, 570, 495, 593, 492, 593, 482, 586, 474, 584, 462, 577, 462, 559, 455, 534, 449, 510, 453, 495, 462, 481, 469, 471, 461 )
 
 [node name="dos_plac" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
@@ -406,12 +451,13 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/dos_plac"]
+position = Vector2( 4, -5 )
 frames = SubResource( 2 )
 animation = "vide"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/dos_plac"]
-visible = false
-polygon = PoolVector2Array( -47, -12, -43, -13, -41, -13, -40, -17, -37, -17, -33, -21, -29, -25, -26, -28, -23, -31, -20, -34, -15, -32, -11, -31, -8, -28, 1, -27, 6, -27, 13, -25, 22, -23, 29, -23, 36, -22, 40, -22, 44, -21, 48, -20, 48, -14, 47, -9, 44, -2, 42, 2, 40, 5, 40, 9, 44, 12, 45, 13, 45, 18, 46, 22, 45, 27, 39, 30, 29, 31, 18, 32, 8, 31, -1, 29, -10, 27, -21, 26, -28, 25, -34, 20, -38, 17, -40, 11, -43, 3, -45, -4, -47, -9 )
+position = Vector2( 3, -5 )
+polygon = PoolVector2Array( -41, -11, -43, -13, -41, -13, -40, -17, -37, -17, -33, -21, -29, -25, -26, -28, -23, -31, -20, -34, -11, -40, -2, -38, 6, -35, 14, -33, 20, -31, 31, -29, 41, -27, 48, -20, 48, -14, 47, -9, 44, -2, 42, 2, 40, 5, 40, 9, 44, 12, 45, 13, 45, 18, 46, 22, 45, 27, 38, 43, 6, 43, -13, 41, -25, 38, -31, 30, -34, 23, -36, 16, -37, 8, -39, 2, -40, -4 )
 
 [node name="machoire_plac" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
@@ -424,12 +470,13 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/machoire_plac"]
+position = Vector2( 8, 0 )
 frames = SubResource( 3 )
 animation = "vide"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/machoire_plac"]
-visible = false
-polygon = PoolVector2Array( -142, -1, -136, -5, -131, -9, -123, -10, -111, -14, -100, -16, -88, -18, -71, -19, -68, -20, -44, -20, -41, -22, -35, -22, -1, -22, 3, -24, 13, -23, 19, -22, 35, -22, 40, -20, 49, -20, 55, -16, 61, -14, 74, -14, 78, -12, 81, -12, 82, -14, 92, -14, 98, -8, 102, -9, 104, -14, 111, -14, 115, -12, 114, -8, 119, -6, 120, -8, 122, -14, 128, -17, 137, -15, 139, -10, 140, -4, 142, 2, 143, 16, 138, 23, 121.208, 23.6458, 113, 20, 108, 20, 93, 18, 77, 16, 68, 14, 33, 13, 24, 12, 21, 10, -29, 10, -63, 10, -84, 9, -86, 12, -102, 12, -128, 12, -135, 10, -142, 7, -143, 4, -142, 1 )
+position = Vector2( 8, 0 )
+polygon = PoolVector2Array( -164, -16, -132, -25, -89, -37, -61, -37, -35, -38, -18, -38, 2, -35, 23, -32, 39, -27, 49, -20, 55, -16, 61, -14, 74, -14, 78, -12, 81, -12, 82, -14, 92, -14, 98, -8, 102, -9, 104, -14, 111, -14, 115, -12, 114, -8, 119, -6, 120, -8, 122, -14, 128, -17, 137, -15, 139, -10, 140, -4, 142, 2, 143, 16, 138, 23, 121.208, 23.6458, 114, 23, 95, 23, 76, 24, 40, 25, -1, 26, -49, 24, -70, 20, -91, 20, -97, 21, -130, 22, -146, 16, -158, 2 )
 
 [node name="nageoires_plac" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
@@ -442,13 +489,13 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/nageoires_plac"]
-position = Vector2( 568, 220 )
+position = Vector2( 571, 215 )
 frames = SubResource( 4 )
 animation = "vide"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/nageoires_plac"]
-visible = false
-polygon = PoolVector2Array( 473, 128, 480, 121, 494, 109, 513, 99, 526, 93, 538, 90, 550, 90, 564, 93, 571, 95, 583, 98, 594, 106, 600, 111, 608, 117, 614, 132, 608, 139, 606, 138, 596, 138, 593, 141, 581, 143, 571, 148, 565, 158, 559, 168, 560, 173, 564, 173, 565, 184, 562, 187, 561, 200, 564, 209, 569, 217, 574, 226, 583, 228, 588, 236, 594, 246, 604, 257, 610, 268, 634, 308, 639, 318, 644, 324, 648, 331, 653, 336, 659, 341, 659, 347, 655, 349, 646, 342, 638, 335, 627, 325, 615, 327, 608, 320, 604, 318, 599, 312, 596, 307, 580, 292, 567, 285, 561, 271, 557, 270, 554, 268, 550, 262, 542, 249, 536, 249, 532, 248, 532, 228, 532, 215, 530, 212, 531, 197, 522, 193, 519, 190, 519, 186, 520, 180, 527, 172, 522, 163, 514, 154, 502, 146, 488, 140, 475, 139, 473, 136 )
+position = Vector2( 3, -5 )
+polygon = PoolVector2Array( 473, 128, 480, 121, 494, 109, 513, 99, 526, 93, 538, 90, 550, 90, 564, 93, 571, 95, 583, 98, 594, 106, 600, 111, 608, 117, 614, 132, 608, 139, 606, 138, 596, 138, 593, 141, 581, 143, 571, 148, 565, 158, 559, 168, 560, 173, 564, 173, 565, 184, 562, 187, 561, 200, 564, 209, 569, 217, 574, 226, 583, 228, 588, 236, 594, 246, 605, 253, 615, 264, 625, 283, 630, 297, 645, 307, 660, 330, 666, 344, 665, 360, 636, 351, 611, 335, 593, 323, 569, 308, 547, 287, 529, 261, 515, 242, 532, 228, 532, 215, 530, 212, 531, 197, 522, 193, 519, 190, 519, 186, 520, 180, 527, 172, 522, 163, 514, 154, 502, 146, 488, 140, 475, 139, 473, 136 )
 
 [node name="queue_plac" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
@@ -461,12 +508,13 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/queue_plac"]
+position = Vector2( 5, -6 )
 frames = SubResource( 5 )
 animation = "vide"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/queue_plac"]
-visible = false
-polygon = PoolVector2Array( -146, 7, -141, 6, -137, 5, -123, -12, -117, -13, -108, -11, -94, -12, -86, -9, -81, -12, -72, -12, -69, -8, -56, -13, -49, -12, -43, -14, -40, -16, -28, -16, -25, -14, -17, -18, -6, -17, 4, -22, 13, -21, 20, -24, 31, -24, 42, -30, 53, -30, 64, -31, 69, -34, 82, -35, 98, -37, 108, -42, 111, -41, 114, -39, 122, -41, 142, -50, 145, -49, 145, -45, 130, -37, 124, -33, 108, -22, 100, -20, 98, -16, 94, -14, 90, -14, 88, -10, 85, -8, 77, -8, 74, -10, 70, -4, 68, -3, 58, -3, 56, 0, 50, 5, 42, 5, 35, 11, 27, 12, 25, 11, 17, 20, 7, 20, 7, 13, 1, 21, -4, 26, -13, 26, -15, 28, -22, 34, -31, 33, -45, 41, -53, 42, -63, 49, -72, 51, -78, 46, -87, 50, -96, 48, -111, 46, -110, 36, -128, 36, -135, 34, -145, 18 )
+position = Vector2( 5, -5 )
+polygon = PoolVector2Array( -144, 5, -141, 6, -137, 5, -129, -16, -115, -26, -97, -27, -76, -27, -55, -29, -22, -30, 3, -30, 20, -35, 43, -38, 65, -43, 90, -42, 105, -47, 114, -46, 142, -50, 145, -49, 145, -45, 130, -37, 124, -33, 116, -21, 104, -15, 86, -4, 71, 4, 54, 14, 22, 29, -7, 43, -51, 58, -80, 66, -110, 61, -131, 48, -145, 18 )
 
 [node name="tete_plac" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
@@ -479,11 +527,23 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/tete_plac"]
+position = Vector2( 3, -5 )
 frames = SubResource( 6 )
 animation = "vide"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/tete_plac"]
-visible = false
-polygon = PoolVector2Array( -155, -15, -141, -22, -116, -29, -107, -29, -103, -31, -93, -31, -90, -32, -77, -32, -75, -34, 13, -34, 29, -39, 40, -44, 53, -50, 61, -51, 65, -52, 84, -53, 96, -51, 109, -41, 124, -24, 135, -12, 143, -7, 150, 0, 157, 12, 150, 19, 142, 22, 134, 38, 129, 38, 125, 50, 116, 53, 108, 42, 103, 48, 94, 48, 88, 41, 74, 43, 66, 22, 61, 33, 49, 30, 39, 13, 33, 1, 15, -7, 9, -10, -20, -13, -69, -8, -88, -9, -96, -5, -103, -6, -109, -3, -129, -2, -135, 1, -148, -3, -156, -8 )
+position = Vector2( 2, -5 )
+polygon = PoolVector2Array( -158, -23, -131, -38, -108, -42, -88, -48, -64, -52, -13, -65, 16, -65, 37, -62, 50, -63, 72, -62, 86, -61, 102, -56, 115, -46, 133, -33, 135, -12, 143, -7, 150, 0, 157, 12, 150, 19, 142, 22, 134, 38, 129, 38, 125, 50, 116, 53, 108, 42, 103, 48, 94, 48, 88, 41, 74, 43, 66, 22, 61, 33, 49, 30, 39, 13, 33, 1, 17, 2, -12, 0, -63, 2, -95, 8, -116, 6, -135, 1, -148, -3, -156, -8 )
+
+[node name="carre" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 10 )
+global_id = "carre"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RoomObjects/carre"]
+position = Vector2( 960, 540 )
+frames = SubResource( 8 )
 
 [node name="bouton_retour" parent="." instance=ExtResource( 11 )]
