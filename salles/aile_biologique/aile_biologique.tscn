@@ -89,6 +89,21 @@ script = ExtResource( 9 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/baleine"]
 polygon = PoolVector2Array( 1592, 331, 1645, 307, 1701, 288, 1756, 274, 1793, 271, 1865, 271, 1964, 270, 1973, 277, 2027, 283, 2037, 299, 2036, 324, 2066, 286, 2115, 273, 2156, 256, 2235, 256, 2250, 264, 2319, 264, 2323, 273, 2397, 272, 2419, 280, 2445, 280, 2461, 288, 2598, 286, 2641, 274, 2658, 270, 2666, 273, 2685, 273, 2688, 263, 2726, 252, 2731, 260, 2776, 242, 2779, 247, 2809, 221, 2815, 226, 2816, 260, 2772, 302, 2729, 312, 2702, 332, 2659, 333, 2646, 342, 2608, 339, 2587, 354, 2559, 358, 2529, 350, 2472, 352, 2461, 357, 2374, 360, 2373, 439, 2404, 454, 2449, 467, 2482, 486, 2494, 489, 2496, 504, 2435, 503, 2363, 482, 2320, 465, 2317, 474, 2302, 501, 2283, 497, 2269, 528, 2174, 529, 2172, 513, 2157, 542, 2128, 545, 2122, 523, 2094, 529, 2053, 529, 2048, 514, 2017, 505, 2001, 471, 1963, 467, 1873, 464, 1754, 453, 1693, 448, 1589, 437, 1583, 420, 1587, 411, 1691, 405, 1755, 408, 1807, 381, 1900, 365, 1857, 348, 1718, 352, 1609, 368, 1589, 355, 1588, 339 )
 
+[node name="mammouth" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 8 )
+esc_script = "res://salles/aile_biologique/scripts/mammouth.esc"
+default_action = "look"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="ESCInteractionLocation" type="Position2D" parent="RoomObjects/mammouth"]
+position = Vector2( 3524, 1004 )
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/mammouth"]
+polygon = PoolVector2Array( 3229, 494, 3177, 503, 3133, 471, 3114, 421, 3107, 379, 3116, 350, 3139, 318, 3140, 295, 3124, 294, 3103, 297, 3094.83, 305.404, 3068, 333, 3059, 358, 3059, 452, 3067, 479, 3099, 529, 3122, 542, 3179, 559, 3201, 558, 3279, 549, 3303, 528, 3332, 548, 3359, 539, 3392, 545, 3406, 545, 3405, 573, 3408, 596, 3419, 601, 3422, 632, 3440, 652, 3440, 693, 3431, 702, 3430, 720, 3442, 744, 3444, 831, 3443, 856, 3412, 892, 3399, 908, 3476, 914, 3488, 921, 3567, 917, 3593, 708, 3590, 611, 3642, 621, 3622, 760, 3662, 833, 3635, 892, 3663, 902, 3711, 900, 3742, 910, 3787, 906, 3802, 888, 3791, 834, 3797, 692, 3796, 631, 3800, 610, 3796, 541, 3748, 485, 3726, 495, 3682.44, 443.53, 3644, 422, 3637, 401, 3552, 372, 3522, 351, 3507, 375, 3473, 376, 3453, 306, 3375, 316, 3368, 356, 3329, 381, 3317, 397, 3306, 366, 3291, 314, 3262, 288, 3210, 268, 3172, 291, 3193, 308, 3226, 333, 3240, 349, 3265, 444, 3275, 488 )
+
 [node name="plaquette_trex" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
 position = Vector2( 1033, 945 )
@@ -103,6 +118,7 @@ animations = null
 [node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_trex"]
 position = Vector2( 22, 34 )
 script = ExtResource( 4 )
+global_id = "sortie_plaq_trex"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_trex"]
 position = Vector2( 7.5, -14 )
@@ -122,6 +138,7 @@ animations = null
 [node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_baleine"]
 position = Vector2( 0, 128 )
 script = ExtResource( 4 )
+global_id = "sortie_plaq_baleine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_baleine"]
 position = Vector2( -1.5, 24 )
@@ -141,6 +158,7 @@ animations = null
 [node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_mammouth"]
 position = Vector2( 0, 128 )
 script = ExtResource( 4 )
+global_id = "sortie_plaq_mammouth"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_mammouth"]
 position = Vector2( 4, 19.5 )
