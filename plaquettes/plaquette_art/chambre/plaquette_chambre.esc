@@ -1,2 +1,2 @@
 :use
-change_scene res://plaquettes/plaquette_art/chambre/plaquette/plaquette.tscn
+change_scene res://plaquettes/plaquette_art/chambre/plaquette/plaquette_chambre.tscn
