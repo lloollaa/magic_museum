@@ -1,2 +1,3 @@
 :use
 set_global couleur 2
+set_state pinceau noir

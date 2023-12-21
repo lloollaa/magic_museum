@@ -1,2 +1,3 @@
 :use
 set_global couleur 0
+set_state pinceau bleu
