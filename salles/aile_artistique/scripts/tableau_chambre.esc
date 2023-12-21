@@ -1,2 +1,5 @@
 :look
+>[!chambre_visite]
+	say persona "La plaquette décrivait des meubles simples et une chambre chaleureuse. C’est tout l’inverse à moins que …" avatar
+	set_global chambre_visite true
 change_scene res://pieces_du_musee/tableaux_aile_art/tableau_chambre/tableau_chambre.tscn

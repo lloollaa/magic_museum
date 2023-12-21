@@ -1,2 +1,5 @@
 :look
+>[! nympheas_visites]
+	say persona "La brochure indiquait des jardins aquatiques sublimes, où sont passées les fleurs enchanteresses ?" avatar
+	set_global nympheas_visites true
 change_scene res://pieces_du_musee/tableaux_aile_art/tableau_nympheas/tableau_nympheas.tscn

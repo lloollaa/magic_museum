@@ -1,3 +1,5 @@
 :look
-say persona "coucou"
+>[!mondrian_visite]
+	say persona "Le guide précisait des couleurs pures. Dans quelle ordre étaient-elles ?" avatar
+	set_global mondrian_visite true
 change_scene res://pieces_du_musee/tableaux_aile_art/mondrian/mondrian.tscn
