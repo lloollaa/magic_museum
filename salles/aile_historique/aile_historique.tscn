@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://salles/historique.PNG" type="Texture" id=1]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=5]
 [ext_resource path="res://personnnage/persona.scn" type="PackedScene" id=6]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" type="Script" id=7]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=8]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" type="Script" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 0, 854, 4030, 854, 4030, 1080, 0, 1080 )
@@ -15,6 +17,9 @@ outlines = [ PoolVector2Array( 0, 854, 4030, 854, 4030, 1080, 0, 1080 ) ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 184, 120 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 29, 33.5 )
 
 [node name="aile_historique" type="Node2D"]
 script = ExtResource( 3 )
@@ -45,6 +50,71 @@ target_scene = "res://salles/hall/hall.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/ESCExit"]
 position = Vector2( 193, 965 )
 shape = SubResource( 2 )
+
+[node name="plaquette_bastille" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 8 )
+esc_script = "res://plaquettes/plaquette_hist/bastille/plaquette.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_bastille"]
+position = Vector2( 1314, 682.5 )
+shape = SubResource( 3 )
+
+[node name="ESCInteractionLocation" type="Position2D" parent="RoomObjects/plaquette_bastille"]
+position = Vector2( 1314, 933 )
+script = ExtResource( 9 )
+
+[node name="plaquette_serment" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 1298, 0 )
+script = ExtResource( 8 )
+esc_script = "res://plaquettes/plaquette_hist/serment/plaquette.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_serment"]
+position = Vector2( 1314, 682.5 )
+shape = SubResource( 3 )
+
+[node name="ESCInteractionLocation" type="Position2D" parent="RoomObjects/plaquette_serment"]
+position = Vector2( 1314, 933 )
+script = ExtResource( 9 )
+
+[node name="plaquette_tuiles" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+position = Vector2( 2531, 0 )
+script = ExtResource( 8 )
+esc_script = "res://plaquettes/plaquette_hist/tuiles/plaquette.esc"
+default_action = "use"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_tuiles"]
+position = Vector2( 1314, 682.5 )
+shape = SubResource( 3 )
+
+[node name="ESCInteractionLocation" type="Position2D" parent="RoomObjects/plaquette_tuiles"]
+position = Vector2( 1314, 933 )
+script = ExtResource( 9 )
+
+[node name="sortie_bastille" type="Position2D" parent="RoomObjects"]
+position = Vector2( 1312, 956 )
+script = ExtResource( 4 )
+global_id = "sortie_bastille"
+
+[node name="sortie_serment" type="Position2D" parent="RoomObjects"]
+position = Vector2( 2608, 932 )
+script = ExtResource( 4 )
+global_id = "sortie_serment"
+
+[node name="sortie_tuiles" type="Position2D" parent="RoomObjects"]
+position = Vector2( 3852, 940 )
+script = ExtResource( 4 )
+global_id = "sortie_tuiles"
 
 [node name="StartPos" type="Position2D" parent="."]
 position = Vector2( 415, 960 )
