@@ -149,6 +149,7 @@ animations = null
 [node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_mondrian"]
 position = Vector2( -10, 400 )
 script = ExtResource( 4 )
+global_id = "sortie_plaq_mondrian"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_mondrian"]
 position = Vector2( -5, -1 )
@@ -168,6 +169,7 @@ animations = null
 [node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_nymphea"]
 position = Vector2( -54, 397 )
 script = ExtResource( 4 )
+global_id = "sortie_plaq_nympheas"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_nymphea"]
 position = Vector2( -1, -8.5 )
@@ -187,6 +189,7 @@ animations = null
 [node name="interact_position" type="Position2D" parent="RoomObjects/plaquette_van_gogh"]
 position = Vector2( 12, 413 )
 script = ExtResource( 4 )
+global_id = "sortie_plaq_chambre"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/plaquette_van_gogh"]
 position = Vector2( 0.5, 1.5 )
